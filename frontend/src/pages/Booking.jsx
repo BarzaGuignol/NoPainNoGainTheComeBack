@@ -18,9 +18,9 @@ export default function Booking() {
   };
 
   const dataButton = () => {
-    alert(`departure : ${decisionDepart}`);
-    alert(`arrival : ${decisionArrival}`);
-    alert(`type : ${typeChoice}`);
+    alert(`departure : ${decisionDepart}
+    arrival : ${decisionArrival}
+    type : ${typeChoice}`);
   };
 
   return (
