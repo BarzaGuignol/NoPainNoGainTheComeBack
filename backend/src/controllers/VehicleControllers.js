@@ -3,14 +3,27 @@ const models = require("../models");
 const browse = (req, res) => {
   models.vehicle
     .findAll()
-    .then(([cars]) => {
-      res.send(cars);
+    .then(([vehicle]) => {
+      res.send(vehicle);
     })
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
     });
 };
+
+const browseDate = (req, res) => {
+  models.vehicle
+    .findDate()
+    .then(([vehicle]) => {
+      res.send(vehicle);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const vehicle = req.body;
 
@@ -51,6 +64,7 @@ const add = (req, res) => {
 
 module.exports = {
   browse,
+  browseDate,
   add,
   edit,
 };

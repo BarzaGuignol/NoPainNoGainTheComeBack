@@ -33,6 +33,17 @@ class VehicleManager extends AbstractManager {
       ]
     );
   }
+
+  findDate() {
+    return this.connection.query(`
+    SELECT v.id, v.model, v.kilometer, v.picture, v.type, v.vehicle_year
+    FROM vehicle v
+    LEFT JOIN booking b ON v.id = b.id_vehicle
+    AND (b.departure_date BETWEEN '2023-01-01' AND '2023-01-07'
+     OR b.arrival_date BETWEEN '2023-01-01' AND '2023-01-07')
+    WHERE b.id IS NULL;
+    `);
+  }
 }
 
 module.exports = VehicleManager;
