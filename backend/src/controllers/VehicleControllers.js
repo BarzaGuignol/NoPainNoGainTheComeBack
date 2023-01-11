@@ -11,6 +11,23 @@ const browse = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+const read = (req, res) => {
+  models.vehicle
+    .find(req.params.id)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
   const vehicle = req.body;
 
@@ -53,4 +70,5 @@ module.exports = {
   browse,
   add,
   edit,
+  read,
 };
