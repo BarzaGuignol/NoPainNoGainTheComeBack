@@ -1,26 +1,24 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
 
-export default function Booking() {
-  const [decisionDepart, setDecisionDepart] = useState("2023-01-11");
-  const [decisionArrival, setDecisionArrival] = useState("2023-01-11");
-  const [typeChoice, setTypeChoice] = useState("");
+import { Link } from "react-router-dom";
 
+export default function Booking({
+  departure,
+  arrival,
+  setType,
+  setDeparture,
+  setArrival,
+}) {
   const handleDecisionDeparture = (e) => {
-    setDecisionDepart(e.target.value);
+    setDeparture(e.target.value);
   };
 
   const handleDecisionArrival = (e) => {
-    setDecisionArrival(e.target.value);
+    setArrival(e.target.value);
   };
 
   const handleChange = (e) => {
-    setTypeChoice(e.target.value);
-  };
-
-  const dataButton = () => {
-    alert(`departure : ${decisionDepart}
-    arrival : ${decisionArrival}
-    type : ${typeChoice}`);
+    setType(e.target.value);
   };
 
   return (
@@ -38,7 +36,7 @@ export default function Booking() {
             type="date"
             id="departure"
             name="trip-departure"
-            value={decisionDepart}
+            value={departure}
             onChange={handleDecisionDeparture}
           />
         </form>
@@ -52,7 +50,7 @@ export default function Booking() {
             type="date"
             id="departure"
             name="trip-departure"
-            value={decisionArrival}
+            value={arrival}
             onChange={handleDecisionArrival}
           />
         </form>
@@ -71,13 +69,12 @@ export default function Booking() {
             <option value="van">Van</option>
           </select>
         </form>
-        <button
+        <Link
+          to="/vehicles"
           className="border-solid border-2 border-green-900 rounded-full w-40 text-green-900"
-          type="button"
-          onClick={dataButton}
         >
           Validation
-        </button>
+        </Link>
       </div>
     </div>
   );
