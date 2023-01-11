@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Search from "@pages/Search";
 import AllVehicles from "@pages/AllVehicles";
-import AddVehicle from "@pages/addVehicle";
+import AddVehicle from "@pages/AddVehicle";
 import Home from "./pages/Home";
 
 import "./App.css";
@@ -21,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/vehicle/creation" element={<AddVehicle />} />
           <Route
-            path="/booking"
+            path="/search"
             element={
               <Search
                 departure={decisionDepart}

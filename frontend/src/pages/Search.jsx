@@ -63,7 +63,7 @@ export default function Search({
             <option value="break">Break</option>
             <option value="sedan">Sedan</option>
             <option value="SUV">SUV</option>
-            <option value="Limousine">Limousine</option>
+            <option value="limousine">Limousine</option>
             <option value="truck">Truck</option>
             <option value="pick-up">Pick-up</option>
             <option value="van">Van</option>
