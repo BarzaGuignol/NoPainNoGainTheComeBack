@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function Booking() {
   const [decisionDepart, setDecisionDepart] = useState("2023-01-11");
   const [decisionArrival, setDecisionArrival] = useState("2023-01-11");
+  const [typeChoice, setTypeChoice] = useState("");
 
   const handleDecisionDeparture = (e) => {
     setDecisionDepart(e.target.value);
@@ -10,6 +11,16 @@ export default function Booking() {
 
   const handleDecisionArrival = (e) => {
     setDecisionArrival(e.target.value);
+  };
+
+  const handleChange = (e) => {
+    setTypeChoice(e.target.value);
+  };
+
+  const dataButton = () => {
+    alert(`departure : ${decisionDepart}`);
+    alert(`arrival : ${decisionArrival}`);
+    alert(`type : ${typeChoice}`);
   };
 
   return (
@@ -46,7 +57,7 @@ export default function Booking() {
           />
         </form>
 
-        <form className="mb-20">
+        <form className="mb-20" onChange={handleChange}>
           <label htmlFor="selectVehicle" className="mr-8">
             Select type of vehicle :
           </label>
@@ -63,6 +74,7 @@ export default function Booking() {
         <button
           className="border-solid border-2 border-green-900 rounded-full w-40 text-green-900"
           type="button"
+          onClick={dataButton}
         >
           Validation
         </button>
