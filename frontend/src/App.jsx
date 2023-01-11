@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Booking from "@pages/Booking";
+import Search from "@pages/Search";
 import AllVehicles from "@pages/AllVehicles";
 import Home from "./pages/Home";
 
@@ -19,7 +19,7 @@ function App() {
         <Route
           path="/booking"
           element={
-            <Booking
+            <Search
               departure={decisionDepart}
               arrival={decisionArrival}
               setType={setTypeChoice}
