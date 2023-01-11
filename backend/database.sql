@@ -76,7 +76,7 @@ VALUES (
         "2019",
         1
     ), (
-        "Mercedes Classe-S 350",
+        "Mercedes Classe-S",
         8597,
         "https://cdn.motor1.com/images/mgl/ALNy6/s1/4x3/essai-mercedes-classe-s-restylee-2017.webp",
         "Limousine",
