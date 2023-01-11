@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <h1 className="text-red-700">Home</h1>
-      <Link className="cstm_cstmrButton" to="/AddVehicle">
+      <Link className="cstm_cstmrButton" to="/vehicle/creation">
         AddVehicle
       </Link>
     </div>
