@@ -37,7 +37,7 @@ function AddVehicle() {
   const handleAddCategory = () => {
     // delete vehicle.id;
     apiConnexion
-      .post(`/Vehicles`, {
+      .post(`/vehicles`, {
         ...vehicle,
       })
       .then((vehicles) => {
@@ -45,7 +45,7 @@ function AddVehicle() {
         setVehicle(vehicles.data);
         setTimeout(() => navigate("/"), 4000);
       })
-      .catch((error) => console.error(error));
+      .catch((err) => console.error(err));
   };
 
   const handleAvailability = (bool) => {
@@ -55,7 +55,6 @@ function AddVehicle() {
   };
 
   const handleCancelButton = () => {
-    notify("test");
     navigate("/");
   };
 
@@ -85,7 +84,7 @@ function AddVehicle() {
             name="model"
           />
           <InputTemplate
-            textPlaceholder="Kilometer"
+            textPlaceholder="Kilometers"
             customWidth="cstm_width_XlInput"
             value={vehicle.kilometer}
             methodOnChange={handleInputOnChange}
