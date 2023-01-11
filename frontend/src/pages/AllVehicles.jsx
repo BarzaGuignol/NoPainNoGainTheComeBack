@@ -1,10 +1,12 @@
-import VehicleList from "../components/VehicleList";
+/* eslint-disable react/prop-types */
 import React from "react";
 
-function AllVehicles() {
+import VehicleList from "../components/VehicleList";
+
+function AllVehicles({ type }) {
   return (
     <div>
-      <VehicleList />
+      <VehicleList type={type} />
     </div>
   );
 }
