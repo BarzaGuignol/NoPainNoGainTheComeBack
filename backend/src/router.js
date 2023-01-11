@@ -13,14 +13,14 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
-router.get("/Vehicles", VehicleControllers.browse);
-router.put("/Vehicles/:id", VehicleControllers.edit);
-router.post("/Vehicles", VehicleControllers.add);
+router.get("/vehicles", VehicleControllers.browse);
+router.put("/vehicles/:id", VehicleControllers.edit);
+router.post("/vehicles", VehicleControllers.add);
 
 router.get("/booking", BookingControllers.browse);
-router.post("/Booking", BookingControllers.add);
+router.post("/booking", BookingControllers.add);
 
-router.get("/Users", UserControllers.browse);
-router.post("/Users", UserControllers.add);
+router.get("/users", UserControllers.browse);
+router.post("/users", UserControllers.add);
 
 module.exports = router;

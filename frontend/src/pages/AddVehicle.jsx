@@ -1,19 +1,27 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
-import { useNavigate } from "react-router-dom";
+import apiConnexion from "../services/apiConnexion";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function AddVehicle() {
   const navigate = useNavigate();
-
   const [vehicle, setVehicle] = useState({
     model: "",
     kilometer: "",
     picture: "",
     type: "",
     vehicle_year: "",
-    vehicle_status: "",
+    vehicle_status: 0,
   });
+
+  const notify = (msg) => {
+    toast(msg);
+  };
 
   // Fonction qui gère le changement d'état des inputs
   /**
@@ -26,86 +34,121 @@ function AddVehicle() {
     setVehicle(newCategory);
   };
 
-  // Partie à mettre en place quand le back est terminé
-  // const handleAddCategory = () => {
-  // delete vehicle.id;
-  // apiConnection
-  //   .post(`/categories`, {
-  //     ...vehicle,
-  //   })
-  //   .then((vehicles) => {
-  //     notify("Vehicle successfully added!");
-  //     setVehicle(vehicles.data);
-  //   })
-  //   .catch((error) => console.error(error));
-  // };
+  const handleAddCategory = () => {
+    // delete vehicle.id;
+    apiConnexion
+      .post(`/Vehicles`, {
+        ...vehicle,
+      })
+      .then((vehicles) => {
+        notify("Vehicle successfully added!");
+        setVehicle(vehicles.data);
+        setTimeout(() => navigate("/"), 4000);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handleAvailability = (bool) => {
+    const newVehicle = { ...vehicle };
+    newVehicle.vehicle_status = bool;
+    setVehicle(newVehicle);
+  };
 
   const handleCancelButton = () => {
+    notify("test");
     navigate("/");
   };
 
   return (
-    <form className="flex flex-col items-center w-full pt-10 gap-y-7">
-      {/* FORM ADD OPTION */}
-      <div className="mt-10 flex flex-col items-center w-full gap-y-7">
-        <InputTemplate
-          textPlaceholder="Model"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.model}
-          methodOnChange={handleInputOnChange}
-          name="model"
-        />
-        <InputTemplate
-          textPlaceholder="Kilometer"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.kilometer}
-          methodOnChange={handleInputOnChange}
-          name="kilometer"
-        />
-        <InputTemplate
-          textPlaceholder="Picture URL"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.picture}
-          methodOnChange={handleInputOnChange}
-          name="picture"
-        />
-        <InputTemplate
-          textPlaceholder="Vehicle type"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.type}
-          methodOnChange={handleInputOnChange}
-          name="type"
-        />
-        <InputTemplate
-          textPlaceholder="Vehicle year"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.vehicle_year}
-          methodOnChange={handleInputOnChange}
-          name="vehicle_year"
-        />
-        <InputTemplate
-          textPlaceholder="vehicle status"
-          customWidth="cstm_width_XlInput"
-          value={vehicle.vehicle_status}
-          methodOnChange={handleInputOnChange}
-          name="vehicle_status"
-        />
-      </div>
-      <div className="flex justify-around space-x-8 pt-5">
-        <ButtonTemplate
-          methodOnClick={handleCancelButton}
-          buttonType="button"
-          buttonText="GO BACK"
-          buttonStyle="cstm_buttonSecondaryNone"
-        />
-        <ButtonTemplate
-          buttonType="button"
-          buttonText="ADD"
-          buttonStyle="cstm_buttonSecondaryNone"
-          // methodOnClick={handleAddCategory}
-        />
-      </div>
-    </form>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <form className="flex flex-col items-center w-full pt-10 gap-y-7">
+        {/* FORM ADD OPTION */}
+        <div className="mt-10 flex flex-col items-center w-full gap-y-7">
+          <InputTemplate
+            textPlaceholder="Model"
+            customWidth="cstm_width_XlInput"
+            value={vehicle.model}
+            methodOnChange={handleInputOnChange}
+            inputType="text"
+            name="model"
+          />
+          <InputTemplate
+            textPlaceholder="Kilometer"
+            customWidth="cstm_width_XlInput"
+            value={vehicle.kilometer}
+            methodOnChange={handleInputOnChange}
+            inputType="number"
+            name="kilometer"
+          />
+          <InputTemplate
+            textPlaceholder="Picture URL"
+            customWidth="cstm_width_XlInput"
+            value={vehicle.picture}
+            methodOnChange={handleInputOnChange}
+            inputType="text"
+            name="picture"
+          />
+          <InputTemplate
+            textPlaceholder="Vehicle type"
+            customWidth="cstm_width_XlInput"
+            value={vehicle.type}
+            methodOnChange={handleInputOnChange}
+            inputType="text"
+            name="type"
+          />
+          <InputTemplate
+            textPlaceholder="Vehicle year"
+            customWidth="cstm_width_XlInput"
+            value={vehicle.vehicle_year}
+            methodOnChange={handleInputOnChange}
+            inputType="number"
+            name="vehicle_year"
+          />
+          {vehicle.vehicle_status === 0 && (
+            <ButtonTemplate
+              buttonType="button"
+              buttonText="Not Available"
+              buttonStyle="border-solid border-gray-400 text-gray-400 border-2 rounded-md p-3 hover:bg-primary hover:text-white hover:border-primary"
+              methodOnClick={() => handleAvailability(1)}
+            />
+          )}
+          {vehicle.vehicle_status === 1 && (
+            <ButtonTemplate
+              buttonType="button"
+              buttonText="Available"
+              buttonStyle="bg-primary border-solid border-primary border-2 rounded-md p-3 text-white hover:bg-white hover:text-gray-400 hover:border-gray-400"
+              methodOnClick={() => handleAvailability(0)}
+            />
+          )}
+        </div>
+        <div className="flex justify-around space-x-8 pt-5">
+          <ButtonTemplate
+            methodOnClick={handleCancelButton}
+            buttonType="button"
+            buttonText="GO BACK"
+            buttonStyle="cstm_buttonSecondaryNone"
+          />
+          <ButtonTemplate
+            buttonType="button"
+            buttonText="ADD"
+            buttonStyle="cstm_buttonSecondaryNone"
+            methodOnClick={handleAddCategory}
+          />
+        </div>
+      </form>
+    </>
   );
 }
 
