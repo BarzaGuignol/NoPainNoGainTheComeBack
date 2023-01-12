@@ -135,7 +135,7 @@ VALUES (
         "Piancatelli",
         "Azerty123",
         "charliepiancatelli@mail.com",
-        0
+        2
     );
 
 DROP TABLE IF EXISTS booking;

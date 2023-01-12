@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import VehicleList from "../components/VehicleList";
+import Nav from "@components/Nav";
 
 function AllVehicles({ type }) {
   return (
@@ -17,6 +18,7 @@ function AllVehicles({ type }) {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <div>
+        <Nav />
         <VehicleList type={type} />
       </div>
     </>

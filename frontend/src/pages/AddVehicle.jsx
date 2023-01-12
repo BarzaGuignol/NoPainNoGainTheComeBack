@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
+import Nav from "@components/Nav";
 import apiConnexion from "../services/apiConnexion";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -82,6 +83,7 @@ function AddVehicle() {
         pauseOnHover
         theme="dark"
       />
+      <Nav />
       <form className="flex flex-col items-center w-full pt-10 gap-y-7">
         {/* FORM ADD OPTION */}
         <div className="mt-10 flex flex-col items-center w-full gap-y-7">

@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 
 import ButtonTemplate from "@components/ButtonTemplate";
+import Nav from "@components/Nav";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -26,6 +27,7 @@ function Booking() {
         />
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
+      <Nav />
       <div className="flex justify-center space-x-8 mt-10">
         <ButtonTemplate
           buttonType="button"

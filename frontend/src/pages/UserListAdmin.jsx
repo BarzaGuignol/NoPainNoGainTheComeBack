@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
 import apiConnexion from "../services/apiConnexion";
+import Nav from "@components/Nav";
+
+
 
 function UserListAdmin() {
   const [usersList, setUsersList] = useState();
@@ -37,6 +39,7 @@ function UserListAdmin() {
         />
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
+      <Nav />
       <div>
         <div className="flex justify-center mt-6 mb-6">
           <Link
