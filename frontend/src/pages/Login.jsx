@@ -47,7 +47,7 @@ function Login() {
       })
       .then((curentUser) => {
         handleUser(curentUser.data);
-        notify("Connected!");
+        notify("Connected !");
         if (curentUser.data.user_type === 1) {
           navigate("/vehicles/management");
         }
@@ -87,7 +87,7 @@ function Login() {
         <p className="text-white">Enter your credentials to connect</p>
         <form className="flex flex-col items-center gap-y-7 w-full mt-40">
           <InputTemplate
-            customWidth="cstm_width_XlInput bg-white"
+            customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
             inputType="text"
             textPlaceholder="Email"
             value={infos.email}
@@ -96,7 +96,7 @@ function Login() {
           />
           {hidePassword ? (
             <InputTemplate
-              customWidth="cstm_width_XlInput bg-white"
+              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               inputType="password"
               textPlaceholder="Password"
               value={infos.password}
@@ -105,7 +105,7 @@ function Login() {
             />
           ) : (
             <InputTemplate
-              customWidth="cstm_width_XlInput bg-white"
+              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               inputType="text"
               textPlaceholder="Password"
               value={infos.password}
@@ -114,11 +114,11 @@ function Login() {
             />
           )}
 
-          <div className="flex flex-row space-x-6">
+          <div className="flex space-x-6">
             <ButtonTemplate
               buttonType="button"
-              buttonText="CONNECT"
-              buttonStyle="cstm_cstmrButton"
+              buttonText="To log in"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
               methodOnClick={handleLogin}
             />
             {hidePassword ? (

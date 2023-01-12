@@ -74,12 +74,12 @@ function VehicleListCompany() {
         <h1 className="text-center font-bold text-3xl pt-8 pb-4">
           Management vehicles
         </h1>
-        <div className="my-4 ml-32">
+        <div className="flex justify-center my-4 ">
           <Link
             to="/vehicle/creation"
-            className="bg-black rounded px-5 py-2 text-white"
+            className="bg-blue-900 hover:bg-blue-800 rounded-lg px-12 py-3 text-white"
           >
-            Add a new vehicle
+            Add a vehicle
           </Link>
         </div>
         <div className="px-2 w-full flex justify-center ">

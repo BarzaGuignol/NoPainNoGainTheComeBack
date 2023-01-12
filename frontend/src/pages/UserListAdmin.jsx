@@ -30,7 +30,7 @@ function UserListAdmin() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Admin - User List </title>
+        <title>Administrator - User Management </title>
         <meta
           name="description"
           content="View a list of all registered users on this page. Manage user information and access levels."
@@ -39,17 +39,20 @@ function UserListAdmin() {
       </Helmet>
       <Nav />
       <div className="h-[100vh]">
+        <h1 className="text-center font-bold text-3xl pt-8 pb-4">
+          User Management
+        </h1>
         <div className="flex justify-center mt-6 mb-6">
           <Link
             to="/users/creation"
-            className="flex justify-center items-center bg-indigo-900 hover:bg-indigo-700 w-48 h-10 rounded-lg text-white"
+            className="flex justify-center items-center bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
           >
             Add User
           </Link>
         </div>
         <div className="flex justify-center">
           <table className="userslist mb-12">
-            <tr className="border bg-slate-200">
+            <tr className="border bg-blue-900 text-white">
               <th className="w-48">User</th>
               <th className="w-48">E-mail</th>
               <th className="w-48">Role</th>
@@ -76,9 +79,13 @@ function UserListAdmin() {
                     </div>
                   </td>
                   <td>
-                    <div className="flex justify-center">
-                      <button type="button" onClick={() => deleteUser(users)}>
-                        ❌
+                    <div className="flex justify-center text-blue-900">
+                      <button
+                        className="font-bold"
+                        type="button"
+                        onClick={() => deleteUser(users)}
+                      >
+                        X
                       </button>
                     </div>
                   </td>
