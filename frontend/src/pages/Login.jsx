@@ -59,10 +59,6 @@ function Login() {
       });
   };
 
-  // const handleLogOut = () => {
-  //   handleUser({});
-  // };
-
   return (
     <>
       <ToastContainer
