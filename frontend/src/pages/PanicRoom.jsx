@@ -49,7 +49,7 @@ export default function PanicRoom() {
           </div>
         </div>
         <CoffeeMachine />
-        <h2 className="text-center mt-20  font-bold rainbow text-2xl">
+        <h2 className="text-center mt-20 font-bold rainbow text-2xl">
           \/ - Want a game ? - \/
         </h2>
         <RunButton />
