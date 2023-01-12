@@ -4,7 +4,7 @@ import "@components/RunButton.css";
 
 export default function RunButton() {
   return (
-    <div className="text-center justify-center flex flex-col w-[500px] mx-auto">
+    <div className="text-center justify-center flex flex-col w-[500px] mx-auto mt-20">
       <div>
         <div className="button3D">
           <a href="http://localhost:3000/">NO</a>

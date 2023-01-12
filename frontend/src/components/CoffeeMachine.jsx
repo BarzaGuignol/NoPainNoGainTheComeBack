@@ -5,7 +5,9 @@ import "@components/CoffeeMachine.css";
 export default function CoffeeMachine() {
   return (
     <div>
-      <h1 className="text-center mt-40 h-96 font-bold">Coffee Time</h1>
+      <h1 className="text-center mt-40 h-[50vh] font-bold rainbow text-2xl">
+        \Ö/ Coffee Time \Ö/
+      </h1>
       <div className="container w-[300px] h-[280px]">
         <div className="coffee-header">
           <div className="coffee-header__buttons coffee-header__button-one" />
