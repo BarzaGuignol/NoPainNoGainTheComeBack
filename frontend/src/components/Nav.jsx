@@ -10,7 +10,7 @@ function Nav() {
     navigate("/");
   };
   return (
-    <div>
+    <div className="border-b-4 border-indigo-900">
       <ul className="flex justify-around">
         <Link to="/">
           <img

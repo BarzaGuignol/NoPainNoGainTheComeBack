@@ -27,74 +27,74 @@ INSERT INTO
         vehicle_status
     )
 VALUES (
-        "Volvo V60",
+        "Red Fire",
         114560,
-        "https://cdn-s-www.ledauphine.com/images/7E78C5B1-52BB-49C6-AFC0-630BF74ACD39/NW_raw/le-nouveau-volvo-v60-propose-cinq-niveaux-de-finition-distinctifs-v60-momentum-inscription-inscription-luxe-et-r-design-sans-compter-la-gamme-business-chacun-d-eux-evolue-selon-quatre-definitions-ou-positionnements-expressivite-elegance-discretion-ou-sportivite-premier-signe-distinctif-les-jantes-dont-la-taille-evolue-de-16-a-20-pouces-sp-1541401369.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852141_500_375.jpg",
         "Break",
-        "2018",
+        "2003",
         1
     ), (
-        "Peugeot 607",
+        "Piranha Pipes",
         245167,
-        "https://images.caradisiac.com/logos-ref/gamme/gamme--peugeot-607/S7-gamme--peugeot-607.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852162_252_221.jpg",
         "Sedan",
-        "2009",
+        "2003",
         1
     ), (
-        "Kia Stinger",
+        "Goo Goo Mobile",
         58132,
-        "https://www.largus.fr/images/images/kia-stinger-2.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852148_500_442.jpg",
         "Sedan",
-        "2021",
+        "2003",
         1
     ), (
-        "Ford Raptor",
+        "Heart Coach",
         77899,
-        "https://static.wixstatic.com/media/eb0c13_93c96fb125fd470fb6ff4db16262554a~mv2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/eb0c13_93c96fb125fd470fb6ff4db16262554a~mv2.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852143_500_439.jpg",
         "Pick-up",
-        "2018",
+        "2003",
         1
     ), (
-        "Renault Master",
+        "King Bowser",
         128562,
-        "https://www.renaultgroup.com/wp-content/uploads/2014/04/master-1.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852151_500_375.jpg",
         "Van",
-        "2014",
+        "2003",
         1
     ), (
-        "Peugeot 3008",
+        "Turbo Yoshi",
         25450,
-        "https://www.largus.fr/images/images/peugeot-3008-2020-gt-rouge-vue-av_2.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852146_500_375.jpg",
         "SUV",
-        "2020",
+        "2003",
         1
     ), (
-        "Volkswagen Touareg",
+        "Wario Mobile",
         84560,
-        "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/2019-Volkswagen-Touareg-SUV-blue-press-image-1001x565p.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852160_500_375.jpg",
         "SUV",
-        "2019",
+        "2003",
         1
     ), (
-        "Mercedes Classe-S",
+        "Koopa Dasheur",
         8597,
-        "https://cdn.motor1.com/images/mgl/ALNy6/s1/4x3/essai-mercedes-classe-s-restylee-2017.webp",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852152_500_375.jpg",
         "Limousine",
-        "2017",
+        "2003",
         1
     ), (
-        "Peugeot 508",
+        "Bloom Coach",
         22611,
-        "https://www.lys-automobiles.com/img/vehicules/1/238/starterre-peugeot-508-3813af0b0674c19543ab2480048ad163.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852145_280_244.jpg",
         "Sedan",
-        "2022",
+        "2003",
         1
     ), (
-        "MAN TGX",
+        "Bill Boum",
         228002,
-        "https://www.truck1.fr/img/Tracteur_routier_MAN_TGX_440_Lowdeck-xxl-1761/1761_2298382828748.jpg",
+        "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852159_241_234.jpg",
         "Truck",
-        "2012",
+        "2003",
         1
     );
 

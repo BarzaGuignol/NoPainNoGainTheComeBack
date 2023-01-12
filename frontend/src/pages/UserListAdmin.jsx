@@ -38,11 +38,11 @@ function UserListAdmin() {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <Nav />
-      <div>
+      <div className="h-[100vh]">
         <div className="flex justify-center mt-6 mb-6">
           <Link
             to="/users/creation"
-            className="flex justify-center items-center bg-green-900 hover:bg-green-700 w-48 h-10 rounded-lg text-white"
+            className="flex justify-center items-center bg-indigo-900 hover:bg-indigo-700 w-48 h-10 rounded-lg text-white"
           >
             Add User
           </Link>
