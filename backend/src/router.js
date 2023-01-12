@@ -16,6 +16,7 @@ router.delete("/items/:id", itemControllers.destroy);
 router.get("/vehicles", VehicleControllers.browse);
 router.put("/vehicles/:id", VehicleControllers.edit);
 router.get("/vehicles/:id", VehicleControllers.read);
+router.delete("/vehicles/:id", VehicleControllers.destroy);
 router.post("/vehicles", VehicleControllers.add);
 router.post("/vehicles/dates", VehicleControllers.browseDate);
 

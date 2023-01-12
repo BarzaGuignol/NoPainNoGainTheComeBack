@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import ButtonTemplate from "./ButtonTemplate";
 
-function VehicleCardEnterprise({ vehicle }) {
+function VehicleCardCompany({ vehicle, handleDeleteVehicle }) {
   return (
     <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
       <div className="pt-1 flex justify-end">
@@ -32,7 +32,7 @@ function VehicleCardEnterprise({ vehicle }) {
             buttonType="button"
             buttonText="Delete"
             buttonStyle="cstm_buttonPrimary px-6 mx-2"
-            // methodOnClick,
+            methodOnClick={() => handleDeleteVehicle(vehicle.id)}
           />
           <Link to={`/vehicle/update/${vehicle.id}`}>
             <ButtonTemplate
@@ -47,4 +47,4 @@ function VehicleCardEnterprise({ vehicle }) {
   );
 }
 
-export default VehicleCardEnterprise;
+export default VehicleCardCompany;

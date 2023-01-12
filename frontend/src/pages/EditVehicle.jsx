@@ -77,7 +77,7 @@ function EditVehicle() {
   };
 
   const handleCancelButton = () => {
-    navigate("/");
+    navigate("/vehicles/management");
   };
 
   return (
