@@ -5,9 +5,10 @@ import User from "../contexts/UserContext";
 
 export default function Home() {
   const { user } = useContext(User.UserContext);
-  console.log(user);
+
   return (
     <div>
+      {user}
       <h1 className="text-red-700">Home</h1>
       <Link className="cstm_cstmrButton" to="/vehicle/creation">
         AddVehicle
