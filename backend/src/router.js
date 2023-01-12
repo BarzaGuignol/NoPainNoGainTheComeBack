@@ -15,13 +15,14 @@ router.delete("/items/:id", itemControllers.destroy);
 
 router.get("/Vehicles", VehicleControllers.browse);
 router.put("/Vehicles/:id", VehicleControllers.edit);
+router.get("/vehicles/:id", VehicleControllers.read);
 router.post("/Vehicles", VehicleControllers.add);
 router.post("/Vehicles/Dates", VehicleControllers.browseDate);
 
 router.get("/booking", BookingControllers.browse);
-router.post("/Booking", BookingControllers.add);
+router.post("/booking", BookingControllers.add);
 
-router.get("/Users", UserControllers.browse);
-router.post("/Users", UserControllers.add);
+router.get("/users", UserControllers.browse);
+router.post("/users", UserControllers.add);
 
 module.exports = router;

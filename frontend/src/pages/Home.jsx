@@ -8,6 +8,9 @@ export default function Home() {
       <Link className="cstm_cstmrButton" to="/vehicle/creation">
         AddVehicle
       </Link>
+      <Link className="cstm_cstmrButton" to="/vehicle/update/1">
+        EditVehicle
+      </Link>
     </div>
   );
 }

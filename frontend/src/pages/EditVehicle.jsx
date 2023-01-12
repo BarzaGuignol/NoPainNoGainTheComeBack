@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+/* eslint-disable camelcase */
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
@@ -8,7 +9,8 @@ import apiConnexion from "../services/apiConnexion";
 
 import "react-toastify/dist/ReactToastify.css";
 
-function AddVehicle() {
+function EditVehicle() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [vehicle, setVehicle] = useState({
     model: "",
@@ -34,18 +36,38 @@ function AddVehicle() {
     setVehicle(newCategory);
   };
 
-  const handleAddCategory = () => {
-    // delete vehicle.id;
+  // Fonction qui gère la récupération des données avec axios
+  const getVehicle = () => {
     apiConnexion
-      .post(`/vehicles`, {
-        ...vehicle,
+      .get(`/vehicles/${id}`)
+      .then((oneVehicle) => setVehicle(oneVehicle.data))
+      .catch((error) => console.error(error));
+  };
+
+  // Pour que la donnée se mette à jour en live
+  useEffect(() => {
+    getVehicle();
+  }, []);
+
+  // Fonction qui gère la modification d'une catégorie
+  const handleUpdateCategory = () => {
+    const { model, kilometer, picture, type, vehicle_year, vehicle_status } =
+      vehicle;
+
+    apiConnexion
+      .put(`/vehicles/${vehicle.id}`, {
+        model,
+        kilometer,
+        picture,
+        type,
+        vehicle_year,
+        vehicle_status,
       })
-      .then((vehicles) => {
-        notify("Vehicle successfully added!");
-        setVehicle(vehicles.data);
+      .then(() => {
+        notify("Vehicle successfully updated!");
         setTimeout(() => navigate("/"), 4000);
       })
-      .catch((err) => console.error(err));
+      .catch((error) => console.error(error));
   };
 
   const handleAvailability = (bool) => {
@@ -112,7 +134,7 @@ function AddVehicle() {
             customWidth="cstm_width_XlInput"
             value={vehicle.vehicle_year}
             methodOnChange={handleInputOnChange}
-            inputType="number"
+            inputType="date"
             name="vehicle_year"
           />
           {vehicle.vehicle_status === 0 && (
@@ -141,9 +163,9 @@ function AddVehicle() {
           />
           <ButtonTemplate
             buttonType="button"
-            buttonText="ADD"
+            buttonText="UPDATE"
             buttonStyle="cstm_buttonSecondaryNone"
-            methodOnClick={handleAddCategory}
+            methodOnClick={handleUpdateCategory}
           />
         </div>
       </form>
@@ -151,4 +173,4 @@ function AddVehicle() {
   );
 }
 
-export default AddVehicle;
+export default EditVehicle;
