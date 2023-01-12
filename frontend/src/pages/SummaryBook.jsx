@@ -20,26 +20,29 @@ function SummaryBook() {
       .catch((err) => console.error(err));
   }, [id]);
 
+  const departure = new Date(booking.departure_date);
+  const arrival = new Date(booking.arrival_date);
+
   return (
-    <div>
-      <div className="mt-20 flex flex-col border-black">
+    <div className="flex flex-col items-center">
+      <div className="mt-20 flex flex-col items-center border-black">
         <h2 className="mt-5 font-medium mx-3">
-          Thank you {booking.firstname} {booking.lastname} for your booking
+          Thank you {booking.firstname} {booking.lastname} for your booking !
         </h2>
         <hr className="mt-3 mx-3" />
         <span className="mt-5 mx-3 font-normal">
           Reservation number : #00{id}
         </span>
-        <span className="mt-5 mx-3 font-normal">{booking.model}</span>
-        <img src={booking.picture} alt={booking.model} />
         <div className="grid grid-cols-2 gap-2 mx-1 mx-0">
           <span className="mt-5 mx-3 font-normal">
-            Departure date : {booking.departure_date}
+            Departure date : {`${departure.toLocaleDateString()}`}
           </span>
           <span className="mt-5 mx-3 font-normal">
-            Arrival date : {booking.arrival_date}
+            Arrival date : {`${arrival.toLocaleDateString()}`}
           </span>
         </div>
+        <span className="mt-5 mx-3 font-normal">{booking.model}</span>
+        <img className="w-40" src={booking.picture} alt={booking.model} />
       </div>
     </div>
   );
