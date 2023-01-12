@@ -2,8 +2,6 @@
 
 import ButtonTemplate from "./ButtonTemplate";
 
-// import { Link } from "react-router-dom";
-
 function VehicleCardUser({ vehicle }) {
   return (
     <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
