@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
+import Nav from "@components/Nav";
 
 function AddUserAdmin() {
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ function AddUserAdmin() {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <div>
+        <Nav />
         <h1 className="text-center font-bold mt-5 mb-5 text-green-900">
           Add user
         </h1>
@@ -81,8 +82,9 @@ function AddUserAdmin() {
                 name="user_role"
                 onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               >
-                <option value="administrateur">Administrator</option>
-                <option value="utilisateur">User</option>
+                <option value="admin">Administrator</option>
+                <option value="user">User</option>
+                <option value="company">Company</option>
               </select>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import apiConnexion from "../services/apiConnexion";
 
 import VehicleList from "../components/VehicleList";
+import Nav from "@components/Nav";
 
 function AllVehicles() {
   const [vehicleList, setVehicleList] = useState();
@@ -36,6 +37,7 @@ function AllVehicles() {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <div>
+        <Nav />
         <VehicleList vehicleList={vehicleList} />
       </div>
     </>

@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import User from "../contexts/UserContext";
-
 export default function Home() {
-  const { user } = useContext(User.UserContext);
-  console.log(user);
   return (
     <div>
       <h1 className="text-red-700">Home</h1>

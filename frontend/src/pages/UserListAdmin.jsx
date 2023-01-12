@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
+import Nav from "@components/Nav";
 import apiConnexion from "../services/apiConnexion";
 
 function UserListAdmin() {
@@ -37,6 +37,7 @@ function UserListAdmin() {
         />
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
+      <Nav />
       <div>
         <div className="flex justify-center mt-6 mb-6">
           <Link
@@ -47,7 +48,7 @@ function UserListAdmin() {
           </Link>
         </div>
         <div className="flex justify-center">
-          <table className="userslist">
+          <table className="userslist mb-12">
             <tr className="border bg-slate-200">
               <th className="w-48">User</th>
               <th className="w-48">E-mail</th>
@@ -68,8 +69,9 @@ function UserListAdmin() {
                         name="user_role"
                         value={users.user_type}
                       >
-                        <option value="admin">Administrateur</option>
-                        <option value="user">Utilisateur</option>
+                        <option value="admin">Administrator</option>
+                        <option value="user">User</option>
+                        <option value="company">Company</option>
                       </select>
                     </div>
                   </td>

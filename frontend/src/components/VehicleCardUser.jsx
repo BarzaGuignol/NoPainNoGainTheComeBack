@@ -20,10 +20,10 @@ function VehicleCardUser({ vehicle }) {
           <div className="flex flex-col px-8 py-4">
             <div className="font-bold text-xl mb-2">{vehicle.model}</div>
             <p className="text-gray-700 text-base text-sm">
-              Année {vehicle.vehicle_year}
+              Year {vehicle.vehicle_year}
             </p>
             <p className="text-gray-700 text-base text-sm">
-              {vehicle.kilometer} km
+              {vehicle.kilometer} Km
             </p>
           </div>
         </div>
