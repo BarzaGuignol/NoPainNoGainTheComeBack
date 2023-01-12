@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const AbstractManager = require("./AbstractManager");
 
 class VehicleManager extends AbstractManager {
@@ -34,7 +35,7 @@ class VehicleManager extends AbstractManager {
     );
   }
 
-  findDate( departure_date, arrival_date ) {
+  findDate(departure_date, arrival_date) {
     return this.connection.query(
       `
       SELECT v.id, v.model, v.kilometer, v.picture, v.type, v.vehicle_year

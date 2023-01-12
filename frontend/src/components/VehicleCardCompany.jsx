@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-
+import { Link } from "react-router-dom";
 import ButtonTemplate from "./ButtonTemplate";
 
-function VehicleCardUser({ vehicle }) {
+function VehicleCardCompany({ vehicle, handleDeleteVehicle }) {
   return (
     <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
       <div className="pt-1 flex justify-end">
@@ -27,17 +27,24 @@ function VehicleCardUser({ vehicle }) {
             </p>
           </div>
         </div>
-        <div className="flex justify-center pb-2">
+        <div className="flex justify-center pb-2 mx-2">
           <ButtonTemplate
             buttonType="button"
-            buttonText="Choose"
-            buttonStyle="cstm_buttonPrimary px-6"
-            // methodOnClick,
+            buttonText="Delete"
+            buttonStyle="cstm_buttonPrimary px-6 mx-2"
+            methodOnClick={() => handleDeleteVehicle(vehicle.id)}
           />
+          <Link to={`/vehicle/update/${vehicle.id}`}>
+            <ButtonTemplate
+              buttonType="button"
+              buttonText="Edit"
+              buttonStyle="cstm_buttonPrimary px-8 mx-2"
+            />
+          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default VehicleCardUser;
+export default VehicleCardCompany;
