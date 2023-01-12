@@ -1,13 +1,25 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { Helmet } from "react-helmet";
 
 import VehicleList from "../components/VehicleList";
 
 function AllVehicles({ type }) {
   return (
-    <div>
-      <VehicleList type={type} />
-    </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Users - All Vehicles by Date</title>
+        <meta
+          name="description"
+          content="View and filter our entire rental fleet by reservation date on this page. Easily find available vehicles for your desired rental period."
+        />
+        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+      </Helmet>
+      <div>
+        <VehicleList type={type} />
+      </div>
+    </>
   );
 }
 
