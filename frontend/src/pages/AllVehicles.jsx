@@ -9,8 +9,7 @@ import VehicleList from "../components/VehicleList";
 
 function AllVehicles() {
   const [vehicleList, setVehicleList] = useState();
-  const [searchParams] = useSearchParams();
-  // Add setSearchparams
+  const [searchParams, setSearchparams] = useSearchParams();
   const departure = searchParams.get("departure_date");
   const arrival = searchParams.get("arrival_date");
   const type = searchParams.get("type");
