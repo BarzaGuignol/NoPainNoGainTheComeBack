@@ -5,6 +5,7 @@ import Search from "@pages/Search";
 import AllVehicles from "@pages/AllVehicles";
 import AddVehicle from "@pages/addVehicle";
 import EditVehicle from "@pages/EditVehicle";
+import Login from "@pages/Login";
 
 import Home from "./pages/Home";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/vehicle/creation" element={<AddVehicle />} />
           <Route path="/vehicle/update/:id" element={<EditVehicle />} />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/search"
             element={
