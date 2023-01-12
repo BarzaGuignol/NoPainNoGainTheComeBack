@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "@components/RunButton.css";
 
@@ -7,7 +8,7 @@ export default function RunButton() {
     <div className="text-center justify-center flex flex-col w-[500px] mx-auto mt-20">
       <div>
         <div className="button3D">
-          <a href="http://localhost:3000/">NO</a>
+          <Link to="/search">NO</Link>
         </div>
       </div>
       <div className="mt-5">

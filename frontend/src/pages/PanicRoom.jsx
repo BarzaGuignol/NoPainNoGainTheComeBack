@@ -48,12 +48,12 @@ export default function PanicRoom() {
             </div>
           </div>
         </div>
-      <CoffeeMachine />
-      <h2 className="text-center mt-20  font-bold rainbow text-2xl">
-        \/ - Want a game ? - \/
-      </h2>
-      <RunButton />
-    </div>
-   </>
+        <CoffeeMachine />
+        <h2 className="text-center mt-20 font-bold rainbow text-2xl">
+          \/ - Want a game ? - \/
+        </h2>
+        <RunButton />
+      </div>
+    </>
   );
 }
