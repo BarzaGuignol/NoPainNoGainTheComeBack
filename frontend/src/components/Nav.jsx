@@ -23,7 +23,7 @@ function Nav() {
           {user?.user_type === 2 && (
             <>
               <Link to="/vehicles/management">Users</Link>
-              <Link to="/search">Compagny</Link>
+              <Link to="/search">Company</Link>
               <Link to="/users">Dashboard</Link>
             </>
           )}
