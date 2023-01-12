@@ -37,6 +37,16 @@ function App() {
               />
             }
           />
+          <Route
+            path="/vehicles"
+            element={
+              <AllVehicles
+                departure={decisionDepart}
+                arrival={decisionArrival}
+                type={typeChoice}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </div>
