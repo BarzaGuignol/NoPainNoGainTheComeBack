@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
+import Nav from "@components/Nav";
 import { useNavigate } from "react-router-dom";
 
 function AddUserAdmin() {
@@ -28,6 +29,7 @@ function AddUserAdmin() {
 
   return (
     <div>
+      <Nav />
       <h1 className="text-center font-bold mt-5 mb-5 text-green-900">
         Add user
       </h1>

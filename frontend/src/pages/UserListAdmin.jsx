@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Nav from "@components/Nav";
 
 function UserListAdmin() {
   const [usersList, setUsersList] = useState();
@@ -28,6 +29,7 @@ function UserListAdmin() {
 
   return (
     <div>
+      <Nav />
       <div className="flex justify-center mt-6 mb-6">
         <Link
           to="/users/creation"

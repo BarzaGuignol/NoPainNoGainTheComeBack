@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import Nav from "@components/Nav";
 import { Link } from "react-router-dom";
 
 export default function Search({
@@ -23,6 +24,7 @@ export default function Search({
 
   return (
     <div className="text-center">
+      <Nav />
       <h1 className="text-green-900 font-bold mb-20 text-2xl underline">
         Booking
       </h1>

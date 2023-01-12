@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
 import apiConnexion from "@services/apiConnexion";
+import Nav from "@components/Nav";
 
 import User from "../contexts/UserContext";
 
@@ -52,6 +53,9 @@ function Login() {
         if (curentUser.data.user_type === 0) {
           navigate("/search");
         }
+        if (curentUser.data.user_type === 2) {
+          navigate("/users");
+        }
       })
       .catch((err) => {
         notify("Wrong Credentials!");
@@ -73,6 +77,7 @@ function Login() {
         pauseOnHover
         theme="dark"
       />
+      <Nav />
       <div>
         <p className="text-white">Enter your credentials to connect</p>
         <form className="flex flex-col items-center gap-y-7 w-full">
