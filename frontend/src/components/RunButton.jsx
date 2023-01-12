@@ -5,7 +5,7 @@ import "@components/RunButton.css";
 
 export default function RunButton() {
   return (
-    <div className="text-center justify-center flex flex-col w-[500px] mx-auto mt-20">
+    <div className="text-center justify-center flex flex-col w-full mx-auto mt-20">
       <div>
         <div className="button3D">
           <Link to="/search">NO</Link>
