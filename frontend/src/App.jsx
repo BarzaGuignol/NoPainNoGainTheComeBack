@@ -5,6 +5,8 @@ import Search from "@pages/Search";
 import AddVehicle from "@pages/AddVehicle";
 import Footer from "@components/Footer";
 import PanicRoom from "@pages/PanicRoom";
+import AllVehicles from "@pages/AllVehicles";
+import EditVehicle from "@pages/EditVehicle";
 import Home from "./pages/Home";
 
 import "./App.css";
@@ -21,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/vehicle/creation" element={<AddVehicle />} />
           <Route path="/panic-room" element={<PanicRoom />} />
+          <Route path="/vehicle/update/:id" element={<EditVehicle />} />
           <Route
             path="/search"
             element={
