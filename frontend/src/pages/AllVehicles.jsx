@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Nav from "@components/Nav";
 import apiConnexion from "../services/apiConnexion";
 
 import VehicleList from "../components/VehicleList";
-import Nav from "@components/Nav";
 
 function AllVehicles() {
   const [vehicleList, setVehicleList] = useState();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchparams] = useSearchParams();
   const departure = searchParams.get("departure_date");
   const arrival = searchParams.get("arrival_date");
   const type = searchParams.get("type");
@@ -38,7 +38,11 @@ function AllVehicles() {
       </Helmet>
       <div>
         <Nav />
-        <VehicleList vehicleList={vehicleList} />
+        <VehicleList
+          vehicleList={vehicleList}
+          departure={departure}
+          arrival={arrival}
+        />
       </div>
     </>
   );

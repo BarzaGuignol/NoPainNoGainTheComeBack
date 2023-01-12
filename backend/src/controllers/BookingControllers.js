@@ -8,7 +8,8 @@ const add = (req, res) => {
   models.booking
     .insert(booking)
     .then(([result]) => {
-      res.location(`/Booking/${result.insertId}`).sendStatus(201);
+      res.status(201).json(result.insertId);
+      // res.location(`/Booking/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -26,8 +27,24 @@ const browse = (req, res) => {
       res.sendStatus(500);
     });
 };
+const read = (req, res) => {
+  models.booking
+    .bookingSummary(req.params.id)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 module.exports = {
   add,
   browse,
+  read,
 };

@@ -6,6 +6,7 @@ import apiConnexion from "../services/apiConnexion";
 import VehicleCardCompany from "./VehicleCardCompany";
 
 import "react-toastify/dist/ReactToastify.css";
+import backgroundImage from "../assets/backgroundmario.jpeg";
 
 function VehicleListCompany() {
   const [vehicleList, setVehicleList] = useState();
@@ -19,6 +20,7 @@ function VehicleListCompany() {
     vehicle_year: "",
     vehicle_status: "",
   });
+  console.warn(vehicles);
 
   const notify = (msg) => {
     toast(msg);
@@ -70,8 +72,11 @@ function VehicleListCompany() {
         pauseOnHover
         theme="dark"
       />
-      <div>
-        <h1 className="text-center font-bold text-3xl pt-8 pb-4">
+      <div
+        className="bg-cover bg-center h-1000"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <h1 className=" text-center font-bold text-3xl pt-8 pb-4">
           Management vehicles
         </h1>
         <div className="flex justify-center my-4 ">
@@ -82,7 +87,7 @@ function VehicleListCompany() {
             Add a vehicle
           </Link>
         </div>
-        <div className="px-2 w-full flex justify-center ">
+        <div className="px-2 w-full flex justify-center">
           <div className="grid md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
             {vehicleList &&
               vehicleList.map((vehicle) => (

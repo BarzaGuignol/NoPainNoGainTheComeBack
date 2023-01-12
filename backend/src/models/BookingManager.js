@@ -16,5 +16,16 @@ class BookingManager extends AbstractManager {
       ]
     );
   }
+
+  bookingSummary(id) {
+    return this.connection.query(
+      `SELECT booking.departure_date, booking.arrival_date, vehicle.picture, vehicle.model, users.firstname, users.lastname
+      FROM ${this.table}
+      INNER JOIN vehicle ON booking.id_vehicle = vehicle.id
+      INNER JOIN users ON booking.id_users = users.id
+      WHERE booking.id = ?`,
+      [id]
+    );
+  }
 }
 module.exports = BookingManager;
