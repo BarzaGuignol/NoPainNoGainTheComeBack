@@ -26,7 +26,7 @@ function VehicleListCompany() {
 
   const getAllVehicles = () => {
     apiConnexion
-      .get(`/vehicles`)
+      .get(`/management`)
       .then((res) => {
         setVehicleList(res.data);
       })

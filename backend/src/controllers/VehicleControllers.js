@@ -14,7 +14,7 @@ const browse = (req, res) => {
 
 const browseDate = (req, res) => {
   models.vehicle
-    .findDate(req.body.departure_date, req.body.arrival_date)
+    .findDate(req.query.departure_date, req.query.arrival_date, req.query.type)
     .then(([vehicle]) => {
       res.send(vehicle);
     })

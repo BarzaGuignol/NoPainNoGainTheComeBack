@@ -1,10 +1,29 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import apiConnexion from "../services/apiConnexion";
 
 import VehicleList from "../components/VehicleList";
 
-function AllVehicles({ type }) {
+function AllVehicles() {
+  const [vehicleList, setVehicleList] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const departure = searchParams.get("departure_date");
+  const arrival = searchParams.get("arrival_date");
+  const type = searchParams.get("type");
+
+  useEffect(() => {
+    apiConnexion
+      .get(
+        `/vehicles?arrival_date=${arrival}&departure_date=${departure}&type=${type}`
+      )
+      .then((res) => {
+        setVehicleList(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -17,7 +36,7 @@ function AllVehicles({ type }) {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <div>
-        <VehicleList type={type} />
+        <VehicleList vehicleList={vehicleList} />
       </div>
     </>
   );

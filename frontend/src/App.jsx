@@ -17,9 +17,6 @@ import "./App.css";
 
 function App() {
   const { user } = useContext(User.UserContext);
-  const [decisionDepart, setDecisionDepart] = useState("2023-01-11");
-  const [decisionArrival, setDecisionArrival] = useState("2023-01-11");
-  const [typeChoice, setTypeChoice] = useState("");
 
   return (
     <Router>
@@ -41,28 +38,8 @@ function App() {
           {user?.user_type === 0 && (
             <>
               <Route path="/panic-room" element={<PanicRoom />} />
-              <Route
-                path="/search"
-                element={
-                  <Search
-                    departure={decisionDepart}
-                    arrival={decisionArrival}
-                    setType={setTypeChoice}
-                    setDeparture={setDecisionDepart}
-                    setArrival={setDecisionArrival}
-                  />
-                }
-              />
-              <Route
-                path="/vehicles"
-                element={
-                  <AllVehicles
-                    departure={decisionDepart}
-                    arrival={decisionArrival}
-                    type={typeChoice}
-                  />
-                }
-              />
+              <Route path="/search" element={<Search />} />
+              <Route path="/vehicles" element={<AllVehicles />} />
               <Route path="/booking" element={<Booking />} />
             </>
           )}

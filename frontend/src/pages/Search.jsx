@@ -1,27 +1,12 @@
 /* eslint-disable react/prop-types */
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 
-export default function Search({
-  departure,
-  arrival,
-  setType,
-  setDeparture,
-  setArrival,
-}) {
-  const handleDecisionDeparture = (e) => {
-    setDeparture(e.target.value);
-  };
-
-  const handleDecisionArrival = (e) => {
-    setArrival(e.target.value);
-  };
-
-  const handleChange = (e) => {
-    setType(e.target.value);
-  };
-
+export default function Search() {
+  const [decisionDepart, setDecisionDepart] = useState("");
+  const [decisionArrival, setDecisionArrival] = useState("");
+  const [typeChoice, setTypeChoice] = useState("");
   return (
     <>
       <Helmet>
@@ -47,8 +32,8 @@ export default function Search({
               type="date"
               id="departure"
               name="trip-departure"
-              value={departure}
-              onChange={handleDecisionDeparture}
+              value={decisionDepart}
+              onChange={(e) => setDecisionDepart(e.target.value)}
             />
           </form>
 
@@ -61,16 +46,19 @@ export default function Search({
               type="date"
               id="departure"
               name="trip-departure"
-              value={arrival}
-              onChange={handleDecisionArrival}
+              value={decisionArrival}
+              onChange={(e) => setDecisionArrival(e.target.value)}
             />
           </form>
 
-          <form className="mb-20" onChange={handleChange}>
+          <form className="mb-20">
             <label htmlFor="selectVehicle" className="mr-8">
               Select type of vehicle :
             </label>
-            <select id="selectVehicle">
+            <select
+              id="selectVehicle"
+              onChange={(e) => setTypeChoice(e.target.value)}
+            >
               <option value="">Type</option>
               <option value="Break">Break</option>
               <option value="Sedan">Sedan</option>
@@ -82,7 +70,7 @@ export default function Search({
             </select>
           </form>
           <Link
-            to="/vehicles"
+            to={`/vehicles?arrival_date=${decisionArrival}&departure_date=${decisionDepart}&type=${typeChoice}`}
             className="border-solid border-2 border-green-900 rounded-full w-40 text-green-900"
             type="button"
           >
