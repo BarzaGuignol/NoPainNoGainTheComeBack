@@ -20,7 +20,6 @@ const login = (req, res) => {
   models.users
     .findOne(req.body)
     .then(([user]) => {
-      console.log(user[0].user_type)
       res.send(user[0]);
       // if (user[0]) {
       //   if (await verifyHash(user[0].hashedpassword, req.body.password)) {
@@ -61,8 +60,25 @@ const browse = (req, res) => {
     });
 };
 
+const destroy = (req, res) => {
+  models.users
+    .delete(req.params.id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   add,
   browse,
   login,
+  destroy,
 };
