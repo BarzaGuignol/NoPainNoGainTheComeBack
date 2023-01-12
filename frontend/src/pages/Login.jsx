@@ -84,7 +84,6 @@ function Login() {
       />
       <Nav />
       <div className="h-[100vh]">
-        <p className="text-white">Enter your credentials to connect</p>
         <form className="flex flex-col items-center gap-y-7 w-full mt-40">
           <InputTemplate
             customWidth="cstm_width_XlInput bg-white"
