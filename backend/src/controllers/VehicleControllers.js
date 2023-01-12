@@ -3,8 +3,20 @@ const models = require("../models");
 const browse = (req, res) => {
   models.vehicle
     .findAll()
-    .then(([cars]) => {
-      res.send(cars);
+    .then(([vehicle]) => {
+      res.send(vehicle);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const browseDate = (req, res) => {
+  models.vehicle
+    .findDate(req.body.departure_date, req.body.arrival_date)
+    .then(([vehicle]) => {
+      res.send(vehicle);
     })
     .catch((err) => {
       console.error(err);
@@ -68,6 +80,7 @@ const add = (req, res) => {
 
 module.exports = {
   browse,
+  browseDate,
   add,
   edit,
   read,
