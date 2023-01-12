@@ -15,7 +15,7 @@ function Nav() {
         <Link to="/">
           <img
             className="w-28"
-            src="https://www.freeiconspng.com/thumbs/vehicle-icon/vehicle-icon-7.jpg"
+            src="https://cdn.discordapp.com/attachments/1062381866923069480/1063234118852288652/91610-mario-play-toy-super-kart-download-hd-png.png"
             alt="logo"
           />
         </Link>
@@ -28,7 +28,11 @@ function Nav() {
             </>
           )}
           <button type="button" onClick={handleLogOut}>
-            Log out
+            <img
+              className="w-28"
+              src="https://cdn.discordapp.com/attachments/1062381866923069480/1063236183955603466/bullet-PhotoRoom.png-PhotoRoom.png"
+              alt="logo"
+            />
           </button>
         </div>
       </ul>
