@@ -1,31 +1,52 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 
 import ButtonTemplate from "@components/ButtonTemplate";
-import VehicleCardUser from "@components/VehicleCardUser";
 import Nav from "@components/Nav";
 import apiConnexion from "../services/apiConnexion";
+import User from "../contexts/UserContext";
 
 import "react-toastify/dist/ReactToastify.css";
 
 function Booking() {
+  const { user } = useContext(User.UserContext);
   const [vehicle, setVehicle] = useState({
-    type: "break",
-    picture:
-      "https://cdn-s-www.ledauphine.com/images/7E78C5B1-52BB-49C6-AFC0-630BF74ACD39/NW_raw/le-nouveau-volvo-v60-propose-cinq-niveaux-de-finition-distinctifs-v60-momentum-inscription-inscription-luxe-et-r-design-sans-compter-la-gamme-business-chacun-d-eux-evolue-selon-quatre-definitions-ou-positionnements-expressivite-elegance-discretion-ou-sportivite-premier-signe-distinctif-les-jantes-dont-la-taille-evolue-de-16-a-20-pouces-sp-1541401369.jpg",
-    model: "Volvo V60",
-    vehicle_year: "2018",
-    kilometer: 114560,
+    type: "",
+    picture: "",
+    model: "",
+    vehicle_year: "",
+    kilometer: "",
   });
+
+  const [searchParams] = useSearchParams();
+  // add setSearchparams
+  const departure = searchParams.get("departure_date");
+  const arrival = searchParams.get("arrival_date");
+
   const { id } = useParams();
   const navigate = useNavigate();
+
   const handleValidation = () => {
-    toast("Your booking has been validated");
+    apiConnexion
+      .post(`/booking`, {
+        id_users: user.id,
+        id_vehicle: vehicle.id,
+        departure_date: departure,
+        arrival_date: arrival,
+      })
+      .then((book) => {
+        toast("Your booking has been validated");
+        setTimeout(() => navigate(`/summary-booking/${book.data}`), 4000);
+      })
+      .catch((err) => console.error(err));
   };
+
   const backToAllVehicles = () => {
-    navigate("/vehicles");
+    setVehicle({});
+    toast("Booking successfully deleted");
+    setTimeout(() => navigate("/search"), 4000);
   };
   useEffect(() => {
     apiConnexion
@@ -38,6 +59,18 @@ function Booking() {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Helmet>
         <meta charSet="utf-8" />
         <title>Users - Booking</title>
@@ -48,24 +81,49 @@ function Booking() {
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <Nav />
+
       <div className="flex justify-center space-x-8 mt-10">
-        <div>
-          <VehicleCardUser vehicle={vehicle} />
-        </div>
+        {vehicle && (
+          <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
+            <div className="pt-1 flex justify-end">
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                {vehicle.type}
+              </span>
+            </div>
+            <div>
+              <div className="flex items-center pl-6">
+                <img
+                  className="w-20 h-20 rounded-full"
+                  src={vehicle.picture}
+                  alt={vehicle.model}
+                />
+                <div className="flex flex-col px-8 py-4">
+                  <div className="font-bold text-xl mb-2">{vehicle.model}</div>
+                  <p className="text-gray-700 text-base text-sm">
+                    Year {vehicle.vehicle_year}
+                  </p>
+                  <p className="text-gray-700 text-base text-sm">
+                    {vehicle.kilometer} Km
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         <ButtonTemplate
           buttonType="button"
-          buttonText="Delete"
+          buttonText="Delete booking"
           buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
           methodOnClick={backToAllVehicles}
         />
+
         <ButtonTemplate
           buttonType="button"
-          buttonText="Validate"
+          buttonText="Book this car"
           buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
           methodOnClick={handleValidation}
         />
-        <ToastContainer />
       </div>
     </>
   );

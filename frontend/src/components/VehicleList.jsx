@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import VehicleCardUser from "./VehicleCardUser";
 
-function VehicleList({ vehicleList }) {
+function VehicleList({ vehicleList, departure, arrival }) {
   return (
     <div>
       <h1 className="text-center font-bold text-3xl pt-8 pb-4">All vehicles</h1>
@@ -9,7 +9,12 @@ function VehicleList({ vehicleList }) {
         <div className="grid grid-cols-3 -mx-2">
           {vehicleList &&
             vehicleList.map((vehicle) => (
-              <VehicleCardUser key={vehicle.id} vehicle={vehicle} />
+              <VehicleCardUser
+                key={vehicle.id}
+                vehicle={vehicle}
+                departure={departure}
+                arrival={arrival}
+              />
             ))}
         </div>
       </div>
