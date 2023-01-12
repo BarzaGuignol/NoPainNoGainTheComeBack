@@ -9,6 +9,7 @@ import AllVehicles from "@pages/AllVehicles";
 import EditVehicle from "@pages/EditVehicle";
 import Login from "@pages/Login";
 import Booking from "@pages/Booking";
+import ManagementVehicles from "@pages/ManagementVehicles";
 import Home from "./pages/Home";
 import User from "./contexts/UserContext";
 
@@ -28,6 +29,10 @@ function App() {
           {/* Pages des entreprises */}
           {user?.user_type === 1 && (
             <>
+              <Route
+                path="/vehicles/management"
+                element={<ManagementVehicles />}
+              />
               <Route path="/vehicle/creation" element={<AddVehicle />} />
               <Route path="/vehicle/update/:id" element={<EditVehicle />} />
             </>
