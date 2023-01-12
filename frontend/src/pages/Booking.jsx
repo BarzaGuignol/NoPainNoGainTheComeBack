@@ -20,8 +20,7 @@ function Booking() {
     kilometer: "",
   });
 
-  const [searchParams] = useSearchParams();
-  // add setSearchparams
+  const [searchParams, setSearchparams] = useSearchParams();
   const departure = searchParams.get("departure_date");
   const arrival = searchParams.get("arrival_date");
 
