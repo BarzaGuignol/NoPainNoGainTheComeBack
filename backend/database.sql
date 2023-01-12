@@ -30,70 +30,70 @@ VALUES (
         "Red Fire",
         114560,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852141_500_375.jpg",
-        "Break",
+        "150CC",
         "2003",
         1
     ), (
         "Piranha Pipes",
         245167,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852162_252_221.jpg",
-        "Sedan",
+        "50CC",
         "2003",
         1
     ), (
         "Goo Goo Mobile",
         58132,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852148_500_442.jpg",
-        "Sedan",
+        "50CC",
         "2003",
         1
     ), (
         "Heart Coach",
         77899,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852143_500_439.jpg",
-        "Pick-up",
+        "50CC",
         "2003",
         1
     ), (
         "King Bowser",
         128562,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852151_500_375.jpg",
-        "Van",
+        "100CC",
         "2003",
         1
     ), (
         "Turbo Yoshi",
         25450,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852146_500_375.jpg",
-        "SUV",
+        "150CC",
         "2003",
         1
     ), (
         "Wario Mobile",
         84560,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852160_500_375.jpg",
-        "SUV",
+        "100CC",
         "2003",
         1
     ), (
         "Koopa Dasheur",
         8597,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852152_500_375.jpg",
-        "Limousine",
+        "100CC",
         "2003",
         1
     ), (
         "Bloom Coach",
         22611,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852145_280_244.jpg",
-        "Sedan",
+        "50CC",
         "2003",
         1
     ), (
         "Bill Boum",
         228002,
         "https://images1.fanpop.com/images/image_uploads/Double-Dash-Karts-mario-kart-852159_241_234.jpg",
-        "Truck",
+        "150CC",
         "2003",
         1
     );
@@ -119,22 +119,22 @@ INSERT INTO
         user_type
     )
 VALUES (
-        "Alexandre",
-        "Rouxel",
+        "Mario",
+        "Plumber",
         "Azerty123",
-        "alexandrerouxel@mail.com",
+        "mario@mail.com",
         1
     ), (
-        "Amina",
-        "Hakimi",
+        "Luigi",
+        "Plumber",
         "Azerty123",
-        "aminahakimi@mail.com",
+        "luigi@mail.com",
         0
     ), (
-        "Charlie",
-        "Piancatelli",
+        "Daisy",
+        "Princess",
         "Azerty123",
-        "charliepiancatelli@mail.com",
+        "daysi@mail.com",
         2
     );
 
