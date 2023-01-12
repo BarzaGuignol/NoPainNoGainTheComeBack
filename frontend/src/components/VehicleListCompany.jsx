@@ -19,6 +19,7 @@ function VehicleListCompany() {
     vehicle_year: "",
     vehicle_status: "",
   });
+  console.warn(vehicles);
 
   const notify = (msg) => {
     toast(msg);

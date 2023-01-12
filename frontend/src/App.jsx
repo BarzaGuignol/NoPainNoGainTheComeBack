@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Search from "@pages/Search";
@@ -12,6 +12,7 @@ import Booking from "@pages/Booking";
 import UserListAdmin from "@pages/UserListAdmin";
 import AddUserAdmin from "@pages/AddUserAdmin";
 import ManagementVehicles from "@pages/ManagementVehicles";
+import SummaryBook from "@pages/SummaryBook";
 
 import User from "./contexts/UserContext";
 
@@ -43,7 +44,8 @@ function App() {
               <Route path="/panic-room" element={<PanicRoom />} />
               <Route path="/search" element={<Search />} />
               <Route path="/vehicles" element={<AllVehicles />} />
-              <Route path="/booking" element={<Booking />} />
+              <Route path="/booking/:id" element={<Booking />} />
+              <Route path="/summary-booking/:id" element={<SummaryBook />} />
             </>
           )}
           {user?.user_type === 2 && (

@@ -27,5 +27,6 @@ router.get("/users", UserControllers.browse);
 router.post("/users", UserControllers.add);
 router.post("/login", UserControllers.login);
 router.delete("/users/:id", UserControllers.destroy);
+router.get("/booking/:id", BookingControllers.read);
 
 module.exports = router;
