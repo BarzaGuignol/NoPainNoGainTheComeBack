@@ -38,8 +38,8 @@ function AddUserAdmin() {
         />
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
-      <div>
-        <Nav />
+      <Nav />
+      <div className="h-[100vh]">
         <h1 className="text-center font-bold mt-5 mb-5 text-green-900">
           Add user
         </h1>
