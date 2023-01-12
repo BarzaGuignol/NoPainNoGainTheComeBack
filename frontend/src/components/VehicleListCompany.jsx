@@ -83,7 +83,7 @@ function VehicleListCompany() {
           </Link>
         </div>
         <div className="px-2 w-full flex justify-center ">
-          <div className="grid grid-cols-3 -mx-2">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 -mx-2">
             {vehicleList &&
               vehicleList.map((vehicle) => (
                 <VehicleCardCompany
