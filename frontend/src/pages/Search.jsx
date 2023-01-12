@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Nav from "@components/Nav";
 
-
 export default function Search({
   departure,
   arrival,
@@ -36,12 +35,12 @@ export default function Search({
         <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
       </Helmet>
       <Nav />
-      <div className="text-center">
+      <div className="text-center h-[100vh]">
         <h1 className="text-green-900 font-bold mb-20 text-2xl underline">
           Booking
         </h1>
         <div className="border-solid border-2 border-green-900 w-4/5 mx-auto p-8">
-          <form>
+          <form className="mb-8">
             <label htmlFor="departure" className="mr-8">
               Departure :
             </label>
@@ -54,7 +53,7 @@ export default function Search({
               onChange={handleDecisionDeparture}
             />
           </form>
-          <form>
+          <form className="mb-8">
             <label htmlFor="departure" className="mr-8">
               Arrival :
             </label>
