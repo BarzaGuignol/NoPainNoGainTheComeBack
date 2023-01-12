@@ -46,7 +46,12 @@ function Login() {
       .then((curentUser) => {
         handleUser(curentUser.data);
         notify("Connected!");
-        navigate("/");
+        if (curentUser.data.user_type === 1) {
+          navigate("/vehicle/creation");
+        }
+        if (curentUser.data.user_type === 0) {
+          navigate("/search");
+        }
       })
       .catch((err) => {
         notify("Wrong Credentials!");
