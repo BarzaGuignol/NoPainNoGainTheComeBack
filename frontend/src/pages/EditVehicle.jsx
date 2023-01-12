@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
@@ -82,6 +83,15 @@ function EditVehicle() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Admin - Edit Vehicle</title>
+        <meta
+          name="description"
+          content="Edit and update the details of a vehicle in the rental fleet on this page. Manage vehicle availability and pricing."
+        />
+        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+      </Helmet>
       <ToastContainer
         position="top-right"
         autoClose={4000}
