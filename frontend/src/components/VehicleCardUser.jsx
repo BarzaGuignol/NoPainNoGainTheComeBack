@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import ButtonTemplate from "./ButtonTemplate";
+
 // import { Link } from "react-router-dom";
 
 function VehicleCardUser({ vehicle }) {
@@ -28,13 +30,12 @@ function VehicleCardUser({ vehicle }) {
           </div>
         </div>
         <div className="flex justify-center pb-2">
-          <button
-            type="button"
-            // onClick={methodOnClick}
-            className="cstm_buttonPrimary px-6"
-          >
-            Choose
-          </button>
+          <ButtonTemplate
+            buttonType="button"
+            buttonText="Choose"
+            buttonStyle="cstm_buttonPrimary px-6"
+            // methodOnClick,
+          />
         </div>
       </div>
     </div>
