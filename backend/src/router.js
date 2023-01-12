@@ -13,10 +13,11 @@ router.put("/items/:id", itemControllers.edit);
 router.post("/items", itemControllers.add);
 router.delete("/items/:id", itemControllers.destroy);
 
-router.get("/vehicles", VehicleControllers.browse);
+router.get("/Vehicles", VehicleControllers.browse);
+router.put("/Vehicles/:id", VehicleControllers.edit);
 router.get("/vehicles/:id", VehicleControllers.read);
-router.put("/vehicles/:id", VehicleControllers.edit);
-router.post("/vehicles", VehicleControllers.add);
+router.post("/Vehicles", VehicleControllers.add);
+router.post("/Vehicles/Dates", VehicleControllers.browseDate);
 
 router.get("/booking", BookingControllers.browse);
 router.post("/booking", BookingControllers.add);

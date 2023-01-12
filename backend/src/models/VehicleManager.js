@@ -33,6 +33,22 @@ class VehicleManager extends AbstractManager {
       ]
     );
   }
+
+  findDate( departure_date, arrival_date ) {
+    return this.connection.query(
+      `
+      SELECT v.id, v.model, v.kilometer, v.picture, v.type, v.vehicle_year
+      FROM vehicle v
+      LEFT OUTER JOIN booking b ON v.id = b.id_vehicle
+      WHERE NOT EXISTS (
+        SELECT * FROM booking WHERE id_vehicle = v.id
+        AND (? BETWEEN departure_date AND arrival_date
+        OR ? BETWEEN departure_date AND arrival_date)
+    )
+  `,
+      [departure_date, arrival_date]
+    );
+  }
 }
 
 module.exports = VehicleManager;

@@ -2,10 +2,13 @@ import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Search from "@pages/Search";
+import AddVehicle from "@pages/AddVehicle";
+import Footer from "@components/Footer";
+import PanicRoom from "@pages/PanicRoom";
 import AllVehicles from "@pages/AllVehicles";
-import AddVehicle from "@pages/addVehicle";
 import EditVehicle from "@pages/EditVehicle";
 import Login from "@pages/Login";
+import Booking from "@pages/Booking";
 import Home from "./pages/Home";
 import User from "./contexts/UserContext";
 
@@ -32,6 +35,7 @@ function App() {
           {/* Pages des collaborateurs */}
           {user?.user_type === 0 && (
             <>
+              <Route path="/panic-room" element={<PanicRoom />} />
               <Route
                 path="/search"
                 element={
@@ -54,9 +58,11 @@ function App() {
                   />
                 }
               />
+              <Route path="/booking" element={<Booking />} />
             </>
           )}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
