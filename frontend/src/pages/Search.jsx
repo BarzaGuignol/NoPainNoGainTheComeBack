@@ -73,6 +73,7 @@ export default function Search({
         <Link
           to="/vehicles"
           className="border-solid border-2 border-green-900 rounded-full w-40 text-green-900"
+          type="button"
         >
           Validation
         </Link>
