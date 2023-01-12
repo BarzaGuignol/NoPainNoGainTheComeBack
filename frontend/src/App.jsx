@@ -26,7 +26,6 @@ function App() {
           <Route path="/panic-room" element={<PanicRoom />} />
           <Route path="/vehicle/update/:id" element={<EditVehicle />} />
           <Route path="/booking" element={<Booking />} />
-
           <Route
             path="/search"
             element={
