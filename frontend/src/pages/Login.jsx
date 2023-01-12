@@ -10,6 +10,7 @@ import User from "../contexts/UserContext";
 
 function Login() {
   const { handleUser } = useContext(User.UserContext);
+  const [hidePassword, setHidePassword] = useState(true);
   const [infos, setInfos] = useState({
     email: "",
     password: "",
@@ -63,6 +64,10 @@ function Login() {
       });
   };
 
+  function showPassword() {
+    setHidePassword(!hidePassword);
+  }
+
   return (
     <>
       <ToastContainer
@@ -89,20 +94,57 @@ function Login() {
             methodOnChange={handleInputOnChange}
             name="email"
           />
-          <InputTemplate
-            customWidth="cstm_width_XlInput bg-white"
-            inputType="password"
-            textPlaceholder="Password"
-            value={infos.password}
-            methodOnChange={handleInputOnChange}
-            name="password"
-          />
-          <ButtonTemplate
-            buttonType="button"
-            buttonText="CONNECT"
-            buttonStyle="cstm_cstmrButton"
-            methodOnClick={handleLogin}
-          />
+          {hidePassword ? (
+            <InputTemplate
+              customWidth="cstm_width_XlInput bg-white"
+              inputType="password"
+              textPlaceholder="Password"
+              value={infos.password}
+              methodOnChange={handleInputOnChange}
+              name="password"
+            />
+          ) : (
+            <InputTemplate
+              customWidth="cstm_width_XlInput bg-white"
+              inputType="text"
+              textPlaceholder="Password"
+              value={infos.password}
+              methodOnChange={handleInputOnChange}
+              name="password"
+            />
+          )}
+
+          <div className="flex flex-row space-x-6">
+            <ButtonTemplate
+              buttonType="button"
+              buttonText="CONNECT"
+              buttonStyle="cstm_cstmrButton"
+              methodOnClick={handleLogin}
+            />
+            {hidePassword ? (
+              <button
+                className="w-[30px] h-[30px] mt-2"
+                onClick={showPassword}
+                type="button"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/384356/close-cross-eye-hidden-vision.svg"
+                  alt="eyeCross"
+                />
+              </button>
+            ) : (
+              <button
+                className="w-[30px] h-[30px] mt-2"
+                onClick={showPassword}
+                type="button"
+              >
+                <img
+                  src="https://www.svgrepo.com/show/384342/eye-look-show-view-visible-visiblity.svg"
+                  alt="eyeOpen"
+                />
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </>
