@@ -16,12 +16,7 @@ export default function RunButton() {
         </button>
       </div>
       <div className="mt-5">
-        <div
-          href="http://localhost:3000/"
-          className="btn-flip"
-          data-back="Nope"
-          data-front="Maybe ?"
-        />
+        <div className="btn-flip" data-back="Nope" data-front="Maybe ?" />
       </div>
       <div className="mt-5">
         <a href="http://localhost:3000/" className="power">
