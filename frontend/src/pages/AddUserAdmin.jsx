@@ -44,7 +44,7 @@ function AddUserAdmin() {
           Add user
         </h1>
         <form action="" onSubmit={handleSubmit}>
-          <div className="mb-8">
+          <div className="mt-10 flex flex-col items-center w-full gap-y-7">
             <InputTemplate
               textPlaceholder="Email"
               customWidth="w-72 border-2 border-500 rounded-lg"
@@ -53,8 +53,6 @@ function AddUserAdmin() {
               inputType="text"
               name="email"
             />
-          </div>
-          <div className="mb-8">
             <InputTemplate
               textPlaceholder="Password"
               customWidth="w-72 border-2 border-500 rounded-lg"
@@ -63,8 +61,6 @@ function AddUserAdmin() {
               inputType="text"
               name="password"
             />
-          </div>
-          <div className="mb-8">
             <InputTemplate
               textPlaceholder="Confirm password"
               customWidth="w-72 border-2 border-500 rounded-lg"
@@ -74,7 +70,7 @@ function AddUserAdmin() {
               name="password"
             />
           </div>
-          <div className="mb-8">
+          <div className="mt-8 mb-8">
             <p className="flex justify-center mb-2">Role</p>
             <div className="flex justify-center">
               <select
@@ -93,11 +89,11 @@ function AddUserAdmin() {
               methodOnClick={handleCancelButton}
               buttonType="button"
               buttonText="Back"
-              buttonStyle="bg-green-900 hover:bg-green-700 w-24 h-10 ml-3 rounded-lg text-white"
+              buttonStyle="bg-indigo-900 hover:bg-indigo-700 w-24 h-10 ml-3 rounded-lg text-white"
             />
             <button
               type="submit"
-              className="bg-green-900 hover:bg-green-700 w-24 h-10 ml-3 rounded-lg text-white"
+              className="bg-indigo-900 hover:bg-indigo-700 w-24 h-10 ml-3 rounded-lg text-white"
             >
               Confirm
             </button>
