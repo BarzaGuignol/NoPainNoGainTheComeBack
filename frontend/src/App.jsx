@@ -22,7 +22,6 @@ function App() {
   const [decisionDepart, setDecisionDepart] = useState("2023-01-11");
   const [decisionArrival, setDecisionArrival] = useState("2023-01-11");
   const [typeChoice, setTypeChoice] = useState("");
-  console.log(user)
 
   return (
     <Router>
