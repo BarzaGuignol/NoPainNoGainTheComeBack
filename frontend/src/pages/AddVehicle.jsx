@@ -84,7 +84,7 @@ function AddVehicle() {
         theme="dark"
       />
       <Nav />
-      <form className="flex flex-col items-center w-full pt-10 gap-y-7">
+      <form className="flex flex-col items-center w-full pt-10 gap-y-7 h-[100vh]">
         {/* FORM ADD OPTION */}
         <div className="mt-10 flex flex-col items-center w-full gap-y-7">
           <InputTemplate
