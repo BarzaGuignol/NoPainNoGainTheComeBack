@@ -23,5 +23,6 @@ router.post("/booking", BookingControllers.add);
 
 router.get("/users", UserControllers.browse);
 router.post("/users", UserControllers.add);
+router.post("/login", UserControllers.login);
 
 module.exports = router;
