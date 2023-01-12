@@ -19,7 +19,7 @@ export default function RunButton() {
         <div className="btn-flip" data-back="Nope" data-front="Maybe ?" />
       </div>
       <div className="mt-5">
-        <a href="https://racing.pmnd.rs/" className="power">
+        <a href="https://racing.pmnd.rs/" target="_blanck" className="power">
           HOLD ME
           <span />
           <span />
