@@ -4,7 +4,7 @@ import ButtonTemplate from "./ButtonTemplate";
 
 function VehicleCardCompany({ vehicle, handleDeleteVehicle }) {
   return (
-    <div className="flex flex-col md:w-screen lg:w-screen rounded-lg border-2 overflow-hidden md:ml-10 lg:ml-10 my-2 px-2 py-2">
+    <div className="flex flex-col rounded-lg border-2 overflow-hidden md:m-8 my-2 px-2 py-2">
       <div className="pt-1 flex justify-end">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           {vehicle.type}
