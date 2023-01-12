@@ -48,7 +48,7 @@ function Login() {
         handleUser(curentUser.data);
         notify("Connected!");
         if (curentUser.data.user_type === 1) {
-          navigate("/vehicle/creation");
+          navigate("/vehicles/management");
         }
         if (curentUser.data.user_type === 0) {
           navigate("/search");

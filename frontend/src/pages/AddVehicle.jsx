@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
@@ -56,11 +57,20 @@ function AddVehicle() {
   };
 
   const handleCancelButton = () => {
-    navigate("/");
+    navigate("/vehicles/management");
   };
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Admin - Add Vehicle</title>
+        <meta
+          name="description"
+          content="Add a new vehicle to the rental fleet on this page. Manage vehicle details and availability."
+        />
+        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+      </Helmet>
       <ToastContainer
         position="top-right"
         autoClose={4000}

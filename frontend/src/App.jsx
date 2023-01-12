@@ -11,6 +11,8 @@ import Login from "@pages/Login";
 import Booking from "@pages/Booking";
 import UserListAdmin from "@pages/UserListAdmin";
 import AddUserAdmin from "@pages/AddUserAdmin";
+import ManagementVehicles from "@pages/ManagementVehicles";
+
 import User from "./contexts/UserContext";
 
 import "./App.css";
@@ -31,6 +33,10 @@ function App() {
           {/* Pages des entreprises */}
           {(user?.user_type === 1 || user?.user_type === 2) && (
             <>
+              <Route
+                path="/vehicles/management"
+                element={<ManagementVehicles />}
+              />
               <Route path="/vehicle/creation" element={<AddVehicle />} />
               <Route path="/vehicle/update/:id" element={<EditVehicle />} />
             </>
