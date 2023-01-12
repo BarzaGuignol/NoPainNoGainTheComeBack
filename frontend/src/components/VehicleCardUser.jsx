@@ -4,8 +4,8 @@
 
 function VehicleCardUser({ vehicle }) {
   return (
-    <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2">
-      <div className="pt-4 flex justify-end">
+    <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
+      <div className="pt-1 flex justify-end">
         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           {vehicle.type}
         </span>
@@ -26,6 +26,15 @@ function VehicleCardUser({ vehicle }) {
               {vehicle.kilometer} km
             </p>
           </div>
+        </div>
+        <div className="flex justify-center pb-2">
+          <button
+            type="button"
+            // onClick={methodOnClick}
+            className="cstm_buttonPrimary px-6"
+          >
+            Choose
+          </button>
         </div>
       </div>
     </div>
