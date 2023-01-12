@@ -55,7 +55,7 @@ function AddVehicle() {
   };
 
   const handleCancelButton = () => {
-    navigate("/");
+    navigate("/vehicles/management");
   };
 
   return (

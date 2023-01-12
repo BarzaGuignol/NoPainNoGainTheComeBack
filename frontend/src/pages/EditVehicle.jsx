@@ -77,7 +77,7 @@ function EditVehicle() {
   };
 
   const handleCancelButton = () => {
-    navigate("/");
+    navigate("/vehicles/management");
   };
 
   return (
@@ -134,7 +134,7 @@ function EditVehicle() {
             customWidth="cstm_width_XlInput"
             value={vehicle.vehicle_year}
             methodOnChange={handleInputOnChange}
-            inputType="date"
+            inputType="number"
             name="vehicle_year"
           />
           {vehicle.vehicle_status === 0 && (
