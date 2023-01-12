@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import { Link } from "react-router-dom";
 import ButtonTemplate from "./ButtonTemplate";
 
 function VehicleCardEnterprise({ vehicle }) {
@@ -34,12 +34,13 @@ function VehicleCardEnterprise({ vehicle }) {
             buttonStyle="cstm_buttonPrimary px-6 mx-2"
             // methodOnClick,
           />
-          <ButtonTemplate
-            buttonType="button"
-            buttonText="Edit"
-            buttonStyle="cstm_buttonPrimary px-8 mx-2"
-            // methodOnClick,
-          />
+          <Link to={`/vehicle/update/${vehicle.id}`}>
+            <ButtonTemplate
+              buttonType="button"
+              buttonText="Edit"
+              buttonStyle="cstm_buttonPrimary px-8 mx-2"
+            />
+          </Link>
         </div>
       </div>
     </div>
