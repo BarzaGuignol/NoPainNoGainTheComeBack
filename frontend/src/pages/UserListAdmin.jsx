@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import apiConnexion from "../services/apiConnexion";
 import Nav from "@components/Nav";
-
-
+import apiConnexion from "../services/apiConnexion";
 
 function UserListAdmin() {
   const [usersList, setUsersList] = useState();
@@ -50,7 +48,7 @@ function UserListAdmin() {
           </Link>
         </div>
         <div className="flex justify-center">
-          <table className="userslist">
+          <table className="userslist mb-12">
             <tr className="border bg-slate-200">
               <th className="w-48">User</th>
               <th className="w-48">E-mail</th>
@@ -71,8 +69,9 @@ function UserListAdmin() {
                         name="user_role"
                         value={users.user_type}
                       >
-                        <option value="admin">Administrateur</option>
-                        <option value="user">Utilisateur</option>
+                        <option value="admin">Administrator</option>
+                        <option value="user">User</option>
+                        <option value="company">Company</option>
                       </select>
                     </div>
                   </td>

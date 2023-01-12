@@ -26,7 +26,7 @@ function AddUserAdmin() {
   const handleCancelButton = () => {
     navigate("/users");
   };
-  
+
   return (
     <>
       <Helmet>
@@ -82,8 +82,9 @@ function AddUserAdmin() {
                 name="user_role"
                 onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               >
-                <option value="administrateur">Administrator</option>
-                <option value="utilisateur">User</option>
+                <option value="admin">Administrator</option>
+                <option value="user">User</option>
+                <option value="company">Company</option>
               </select>
             </div>
           </div>
