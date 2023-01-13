@@ -12,13 +12,13 @@
   width: 150px;
   height: 50px;
   cursor: pointer;
-  background: #333;
+  background: #15285f;
   margin: 10px;
   border: none;
   border-radius: 10px;
-  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
-    inset -5px -5px 10px #222;
-  color: #222;
+  box-shadow: -5px -5px 15px #05194f, 5px 5px 15px #0c2262, inset 5px 5px 10px #15285f,
+    inset -5px -5px 10px #15285f;
+  color: #152860;
   font-size: 16px;
 }
 
