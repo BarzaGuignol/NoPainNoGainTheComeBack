@@ -93,69 +93,77 @@ function Login() {
         pauseOnHover
         theme="dark"
       />
-      <Nav />
-      <div className="h-[100vh]">
-        <form className="flex flex-col items-center gap-y-7 w-full mt-40">
-          <InputTemplate
-            customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
-            inputType="text"
-            textPlaceholder="Email"
-            value={infos.email}
-            methodOnChange={handleInputOnChange}
-            name="email"
-          />
-          {hidePassword ? (
-            <InputTemplate
-              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
-              inputType="password"
-              textPlaceholder="Password"
-              value={infos.password}
-              methodOnChange={handleInputOnChange}
-              name="password"
-            />
-          ) : (
+      <div
+        className="bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images5.alphacoders.com/103/thumb-1920-1039957.jpg)",
+        }}
+      >
+        <Nav />
+        <div className="h-[100vh]">
+          <form className="flex flex-col items-center gap-y-7 w-full mt-40">
             <InputTemplate
               customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               inputType="text"
-              textPlaceholder="Password"
-              value={infos.password}
+              textPlaceholder="Email"
+              value={infos.email}
               methodOnChange={handleInputOnChange}
-              name="password"
-            />
-          )}
-
-          <div className="flex space-x-6">
-            <ButtonTemplate
-              buttonType="button"
-              buttonText="To log in"
-              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
-              methodOnClick={handleLogin}
+              name="email"
             />
             {hidePassword ? (
-              <button
-                className="w-[30px] h-[30px] mt-2"
-                onClick={showPassword}
-                type="button"
-              >
-                <img
-                  src="https://www.svgrepo.com/show/384356/close-cross-eye-hidden-vision.svg"
-                  alt="eyeCross"
-                />
-              </button>
+              <InputTemplate
+                customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
+                inputType="password"
+                textPlaceholder="Password"
+                value={infos.password}
+                methodOnChange={handleInputOnChange}
+                name="password"
+              />
             ) : (
-              <button
-                className="w-[30px] h-[30px] mt-2"
-                onClick={showPassword}
-                type="button"
-              >
-                <img
-                  src="https://www.svgrepo.com/show/384342/eye-look-show-view-visible-visiblity.svg"
-                  alt="eyeOpen"
-                />
-              </button>
+              <InputTemplate
+                customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
+                inputType="text"
+                textPlaceholder="Password"
+                value={infos.password}
+                methodOnChange={handleInputOnChange}
+                name="password"
+              />
             )}
-          </div>
-        </form>
+
+            <div className="flex space-x-6">
+              <ButtonTemplate
+                buttonType="button"
+                buttonText="To log in"
+                buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
+                methodOnClick={handleLogin}
+              />
+              {hidePassword ? (
+                <button
+                  className="w-[30px] h-[30px] mt-2"
+                  onClick={showPassword}
+                  type="button"
+                >
+                  <img
+                    src="https://www.svgrepo.com/show/384356/close-cross-eye-hidden-vision.svg"
+                    alt="eyeCross"
+                  />
+                </button>
+              ) : (
+                <button
+                  className="w-[30px] h-[30px] mt-2"
+                  onClick={showPassword}
+                  type="button"
+                >
+                  <img
+                    src="https://www.svgrepo.com/show/384342/eye-look-show-view-visible-visiblity.svg"
+                    alt="eyeOpen"
+                  />
+                </button>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
