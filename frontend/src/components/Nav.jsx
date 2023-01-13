@@ -19,12 +19,21 @@ function Nav() {
             alt="logo"
           />
         </Link>
-        <div className="flex justify-end gap-4 items-center">
+        <div className="flex justify-end gap-5 items-center">
           {user?.user_type === 2 && (
             <>
-              <Link to="/vehicles/management">Users</Link>
-              <Link to="/search">Company</Link>
-              <Link to="/users">Dashboard</Link>
+              <Link to="/users" className="font-extrabold text-xl">
+                DASHBOARD
+              </Link>
+              <Link to="/search" className="font-extrabold text-xl">
+                USERS
+              </Link>
+              <Link
+                to="/vehicles/management"
+                className="font-extrabold text-xl"
+              >
+                COMPANY
+              </Link>
             </>
           )}
           <button type="button" onClick={handleLogOut}>

@@ -6,14 +6,14 @@ function VehicleCardCompany({ vehicle, handleDeleteVehicle }) {
   return (
     <div className="bg-[url('./src/backgroundmario.jpeg')] flex flex-col rounded-lg border-2 overflow-hidden md:m-8 my-2 px-2 py-2  bg-[#deb887e6]">
       <div className="pt-1 flex justify-end">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+        <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           {vehicle.type}
         </span>
       </div>
       <div>
         <div className="flex items-center pl-6">
           <img
-            className="w-20 h-20 rounded-full"
+            className="w-20 h-20 rounded-full border-2 border-blue-900"
             src={vehicle.picture}
             alt={vehicle.model}
           />
@@ -27,18 +27,18 @@ function VehicleCardCompany({ vehicle, handleDeleteVehicle }) {
             </p>
           </div>
         </div>
-        <div className="flex justify-center pb-2 mx-2">
+        <div className="flex space-x-4 justify-center pb-2 mx-2">
           <ButtonTemplate
             buttonType="button"
             buttonText="Delete"
-            buttonStyle="cstm_buttonPrimary px-6 mx-2"
+            buttonStyle="bg-blue-900 hover:bg-blue-800 w-32 h-10 rounded-lg text-white"
             methodOnClick={() => handleDeleteVehicle(vehicle.id)}
           />
           <Link to={`/vehicle/update/${vehicle.id}`}>
             <ButtonTemplate
               buttonType="button"
               buttonText="Edit"
-              buttonStyle="cstm_buttonPrimary px-8 mx-2"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-32 h-10 rounded-lg text-white"
             />
           </Link>
         </div>

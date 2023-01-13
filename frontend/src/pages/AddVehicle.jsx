@@ -64,7 +64,7 @@ function AddVehicle() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Admin - Add Vehicle</title>
+        <title>Administrator - Add a vehicle</title>
         <meta
           name="description"
           content="Add a new vehicle to the rental fleet on this page. Manage vehicle details and availability."
@@ -84,81 +84,102 @@ function AddVehicle() {
         theme="dark"
       />
       <Nav />
-      <form className="flex flex-col items-center w-full pt-10 gap-y-7 h-[100vh]">
-        {/* FORM ADD OPTION */}
-        <div className="mt-10 flex flex-col items-center w-full gap-y-7">
-          <InputTemplate
-            textPlaceholder="Model"
-            customWidth="cstm_width_XlInput"
-            value={vehicle.model}
-            methodOnChange={handleInputOnChange}
-            inputType="text"
-            name="model"
-          />
-          <InputTemplate
-            textPlaceholder="Kilometers"
-            customWidth="cstm_width_XlInput"
-            value={vehicle.kilometer}
-            methodOnChange={handleInputOnChange}
-            inputType="number"
-            name="kilometer"
-          />
-          <InputTemplate
-            textPlaceholder="Picture URL"
-            customWidth="cstm_width_XlInput"
-            value={vehicle.picture}
-            methodOnChange={handleInputOnChange}
-            inputType="text"
-            name="picture"
-          />
-          <InputTemplate
-            textPlaceholder="Vehicle type"
-            customWidth="cstm_width_XlInput"
-            value={vehicle.type}
-            methodOnChange={handleInputOnChange}
-            inputType="text"
-            name="type"
-          />
-          <InputTemplate
-            textPlaceholder="Vehicle year"
-            customWidth="cstm_width_XlInput"
-            value={vehicle.vehicle_year}
-            methodOnChange={handleInputOnChange}
-            inputType="number"
-            name="vehicle_year"
-          />
-          {vehicle.vehicle_status === 0 && (
+      <div className="h-[150vh]">
+        <h1 className="text-center font-bold text-3xl pt-8">User Management</h1>
+        <form className="flex flex-col items-center">
+          {/* FORM ADD OPTION */}
+          <div className="mt-8 flex flex-col items-center w-full">
+            <label htmlFor="Model" className="mb-2">
+              Model
+            </label>
+            <InputTemplate
+              textPlaceholder="Model"
+              customWidth="cstm_width_XlInput mb-7"
+              value={vehicle.model}
+              methodOnChange={handleInputOnChange}
+              inputType="text"
+              name="model"
+            />
+            <label htmlFor="Mileage" className="mb-2">
+              Mileage
+            </label>
+            <InputTemplate
+              textPlaceholder="Kilometers"
+              customWidth="cstm_width_XlInput mb-7"
+              value={vehicle.kilometer}
+              methodOnChange={handleInputOnChange}
+              inputType="number"
+              name="kilometer"
+            />
+            <label htmlFor="Picture" className="mb-2">
+              Picture
+            </label>
+            <InputTemplate
+              textPlaceholder="Picture URL"
+              customWidth="cstm_width_XlInput mb-7"
+              value={vehicle.picture}
+              methodOnChange={handleInputOnChange}
+              inputType="text"
+              name="picture"
+            />
+            <label htmlFor="Type" className="mb-2">
+              Type
+            </label>
+            <InputTemplate
+              textPlaceholder="Vehicle type"
+              customWidth="cstm_width_XlInput mb-7"
+              value={vehicle.type}
+              methodOnChange={handleInputOnChange}
+              inputType="text"
+              name="type"
+            />
+            <label htmlFor="Year" className="mb-2">
+              Year
+            </label>
+            <InputTemplate
+              textPlaceholder="Vehicle year"
+              customWidth="cstm_width_XlInput mb-7"
+              value={vehicle.vehicle_year}
+              methodOnChange={handleInputOnChange}
+              inputType="number"
+              name="vehicle_year"
+            />
+            <label htmlFor="Availablity" className="mb-2">
+              Availablity
+            </label>
+            {vehicle.vehicle_status === 0 && (
+              <ButtonTemplate
+                buttonType="button"
+                buttonText="No"
+                buttonStyle="border-solid border-gray-400 text-gray-400 border-2 rounded-md p-3 hover:bg-blue-100 hover:text-white hover:border-primary"
+                methodOnClick={() => handleAvailability(1)}
+              />
+            )}
+            {vehicle.vehicle_status === 1 && (
+              <ButtonTemplate
+                buttonType="button"
+                buttonText="Available"
+                buttonStyle="bg-blue-800 border-solid border-primary border-2 rounded-md p-3 text-white hover:bg-white hover:text-gray-400 hover:border-gray-400"
+                methodOnClick={() => handleAvailability(0)}
+              />
+            )}
+          </div>
+          <div className="flex justify-around space-x-8 pt-5">
+            <ButtonTemplate
+              methodOnClick={handleCancelButton}
+              buttonType="button"
+              buttonText="Cancel"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white mt-6"
+            />
             <ButtonTemplate
               buttonType="button"
-              buttonText="Not Available"
-              buttonStyle="border-solid border-gray-400 text-gray-400 border-2 rounded-md p-3 hover:bg-primary hover:text-white hover:border-primary"
-              methodOnClick={() => handleAvailability(1)}
+              buttonText="Add"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white mt-6"
+              methodOnClick={handleAddCategory}
             />
-          )}
-          {vehicle.vehicle_status === 1 && (
-            <ButtonTemplate
-              buttonType="button"
-              buttonText="Available"
-              buttonStyle="bg-primary border-solid border-primary border-2 rounded-md p-3 text-white hover:bg-white hover:text-gray-400 hover:border-gray-400"
-              methodOnClick={() => handleAvailability(0)}
-            />
-          )}
-        </div>
-        <div className="flex justify-around space-x-8 pt-5">
-          <ButtonTemplate
-            methodOnClick={handleCancelButton}
-            buttonType="button"
-            buttonText="GO BACK"
-            buttonStyle="cstm_buttonSecondaryNone"
-          />
-          <ButtonTemplate
-            buttonType="button"
-            buttonText="ADD"
-            buttonStyle="cstm_buttonSecondaryNone"
-            methodOnClick={handleAddCategory}
-          />
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

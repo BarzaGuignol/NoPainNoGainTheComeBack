@@ -12,7 +12,7 @@ export default function Search() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Admin - User List </title>
+        <title>Administrator - Search </title>
         <meta
           name="description"
           content="Filter and narrow down your vehicle search on this page by rental dates, location, vehicle type, and other options."
@@ -21,11 +21,9 @@ export default function Search() {
       </Helmet>
       <Nav />
       <div className="text-center h-[100vh]">
-        <h1 className="text-green-900 font-bold mb-20 text-2xl underline">
-          Booking
-        </h1>
-        <div className="border-solid border-2 border-green-900 w-4/5 mx-auto p-8">
-          <form className="mb-8">
+        <h1 className="font-bold text-3xl pt-8 pb-4">Search</h1>
+        <div className="border-solid border-2 border-blue-900 w-2/5 mx-auto p-8">
+          <form className="mb-8 ">
             <label htmlFor="departure" className="mr-8">
               Departure :
             </label>
@@ -52,11 +50,12 @@ export default function Search() {
             />
           </form>
 
-          <form className="mb-20">
+          <form className="mb-10">
             <label htmlFor="selectVehicle" className="mr-8">
               Select type of vehicle :
             </label>
             <select
+              className="w-3/4 md:w-5/12 lg:w-3/12 p-1.5 text-gray-500 bg-white border rounded-md shadow-sm"
               id="selectVehicle"
               onChange={(e) => setTypeChoice(e.target.value)}
             >
@@ -72,10 +71,10 @@ export default function Search() {
           </form>
           <Link
             to={`/vehicles?arrival_date=${decisionArrival}&departure_date=${decisionDepart}&type=${typeChoice}`}
-            className="border-solid border-2 border-green-900 rounded-full w-40 text-green-900"
+            className="bg-blue-900 hover:bg-blue-800 rounded-lg px-12 py-3 text-white"
             type="button"
           >
-            Validation
+            Research
           </Link>
         </div>
       </div>

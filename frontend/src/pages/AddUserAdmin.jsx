@@ -31,7 +31,7 @@ function AddUserAdmin() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Admin - Add Users</title>
+        <title>Administrator - Add User</title>
         <meta
           name="description"
           content="Add a new user to the admin panel with this page. Manage user permissions and access levels."
@@ -40,14 +40,12 @@ function AddUserAdmin() {
       </Helmet>
       <Nav />
       <div className="h-[100vh]">
-        <h1 className="text-center font-bold mt-5 mb-5 text-green-900">
-          Add user
-        </h1>
+        <h1 className="text-center font-bold text-3xl pt-8 pb-4">Add user</h1>
         <form action="" onSubmit={handleSubmit}>
           <div className="mt-10 flex flex-col items-center w-full gap-y-7">
             <InputTemplate
               textPlaceholder="Email"
-              customWidth="w-72 border-2 border-500 rounded-lg"
+              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               value={user.user_email}
               onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               inputType="text"
@@ -55,7 +53,7 @@ function AddUserAdmin() {
             />
             <InputTemplate
               textPlaceholder="Password"
-              customWidth="w-72 border-2 border-500 rounded-lg"
+              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               value={user.user_email}
               onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               inputType="text"
@@ -63,7 +61,7 @@ function AddUserAdmin() {
             />
             <InputTemplate
               textPlaceholder="Confirm password"
-              customWidth="w-72 border-2 border-500 rounded-lg"
+              customWidth="w-3/4 md:w-5/12 lg:w-3/12 bg-white"
               value={user.user_email}
               onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               inputType="text"
@@ -74,7 +72,7 @@ function AddUserAdmin() {
             <p className="flex justify-center mb-2">Role</p>
             <div className="flex justify-center">
               <select
-                className="w-52 p-2.5 text-gray-500 bg-white border rounded-md shadow-sm"
+                className="w-3/4 md:w-5/12 lg:w-3/12 p-2.5 text-gray-500 bg-white border rounded-md shadow-sm"
                 name="user_role"
                 onChange={(e) => handleNewUser(e.target.name, e.target.value)}
               >
@@ -89,11 +87,11 @@ function AddUserAdmin() {
               methodOnClick={handleCancelButton}
               buttonType="button"
               buttonText="Back"
-              buttonStyle="bg-indigo-900 hover:bg-indigo-700 w-24 h-10 ml-3 rounded-lg text-white"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-24 h-10 ml-3 rounded-lg text-white"
             />
             <button
               type="submit"
-              className="bg-indigo-900 hover:bg-indigo-700 w-24 h-10 ml-3 rounded-lg text-white"
+              className="bg-blue-900 hover:bg-blue-800 w-24 h-10 ml-3 rounded-lg text-white"
             >
               Confirm
             </button>
