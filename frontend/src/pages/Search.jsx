@@ -20,15 +20,21 @@ export default function Search() {
         <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <Nav />
-      <div className="text-center h-[100vh]">
-        <h1 className="font-bold text-3xl pt-8 pb-4">Search</h1>
-        <div className="border-solid border-2 border-blue-900 w-2/5 mx-auto p-8">
+      <div
+        className="text-center h-[100vh] bg-cover bg-center h-1000"
+        style={{
+          backgroundImage:
+            "url(https://images-ext-1.discordapp.net/external/pMm0BhYZhUtLHG2H6tyN1SyOzgDOQ6ArZNMeAXgspqs/https/i.jeuxactus.com/datas/jeux/m/a/mario-kart-8-deluxe/xl/mario-kart-8-deluxe-6204c351056b2.jpg?width=921&height=518)",
+        }}
+      >
+        <h1 className="font-bold text-3xl pt-8 pb-4">Find your Kart !</h1>
+        <div className="border-solid border-2 border-blue-900 rounded-xl mx-auto p-8 w-4/6 bg-[#deb887e6]">
           <form className="mb-8 ">
             <label htmlFor="departure" className="mr-8">
               Departure :
             </label>
             <input
-              className="border-2 border-500 rounded-lg outline-[#c8c8c8]"
+              className="border-2 border-500 rounded-lg outline-[#c8c8c8] p-2"
               type="date"
               id="departure"
               name="trip-departure"
@@ -41,7 +47,7 @@ export default function Search() {
               Arrival :
             </label>
             <input
-              className="border-2 border-500 rounded-lg outline-[#c8c8c8]"
+              className="border-2 border-500 rounded-lg outline-[#c8c8c8] p-2"
               type="date"
               id="departure"
               name="trip-departure"

@@ -5,7 +5,7 @@ import ButtonTemplate from "./ButtonTemplate";
 
 function VehicleCardUser({ vehicle, departure, arrival }) {
   return (
-    <div className="flex flex-col rounded-lg border-2 overflow-hidden md:m-8 my-2 px-2 py-2">
+    <div className="flex flex-col rounded-lg border-2 overflow-hidden md:m-8 my-2 px-2 py-2 bg-[#deb887e6]">
       <div className="pt-1 flex justify-end">
         <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           {vehicle.type}

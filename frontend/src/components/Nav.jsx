@@ -11,10 +11,10 @@ function Nav() {
   };
   return (
     <div className="border-b-4 border-indigo-900">
-      <ul className="flex justify-around">
+      <ul className="flex justify-around items-center">
         <Link to="/">
           <img
-            className="w-28"
+            className="w-8 sm:w-12"
             src="https://cdn.discordapp.com/attachments/1062381866923069480/1063234118852288652/91610-mario-play-toy-super-kart-download-hd-png.png"
             alt="logo"
           />
@@ -38,7 +38,7 @@ function Nav() {
           )}
           <button type="button" onClick={handleLogOut}>
             <img
-              className="w-28"
+              className="w-10 sm:w-14"
               src="https://cdn.discordapp.com/attachments/1062381866923069480/1063236183955603466/bullet-PhotoRoom.png-PhotoRoom.png"
               alt="logo"
             />
