@@ -169,12 +169,12 @@ function AddVehicle() {
               methodOnClick={handleCancelButton}
               buttonType="button"
               buttonText="Cancel"
-              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white mt-6"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-40 h-10 rounded-lg text-white mt-6"
             />
             <ButtonTemplate
               buttonType="button"
               buttonText="Add"
-              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white mt-6"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-40 h-10 rounded-lg text-white mt-6"
               methodOnClick={handleAddCategory}
             />
           </div>
