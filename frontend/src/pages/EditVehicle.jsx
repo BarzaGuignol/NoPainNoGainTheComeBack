@@ -91,7 +91,7 @@ function EditVehicle() {
           name="description"
           content="Edit and update the details of a vehicle in the rental fleet on this page. Manage vehicle availability and pricing."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <ToastContainer
         position="top-right"

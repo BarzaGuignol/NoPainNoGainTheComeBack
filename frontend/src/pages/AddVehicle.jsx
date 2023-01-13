@@ -69,7 +69,7 @@ function AddVehicle() {
           name="description"
           content="Add a new vehicle to the rental fleet on this page. Manage vehicle details and availability."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <ToastContainer
         position="top-right"

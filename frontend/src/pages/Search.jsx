@@ -17,7 +17,7 @@ export default function Search() {
           name="description"
           content="Filter and narrow down your vehicle search on this page by rental dates, location, vehicle type, and other options."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <Nav />
       <div className="text-center h-[100vh]">

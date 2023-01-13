@@ -77,7 +77,7 @@ function Booking() {
           name="description"
           content="Reserve a vehicle from our rental fleet on this page. Choose from a variety of vehicles and rental options to suit your needs."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <Nav />
 

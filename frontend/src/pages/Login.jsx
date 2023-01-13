@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
+
 import InputTemplate from "@components/InputTemplate";
 import ButtonTemplate from "@components/ButtonTemplate";
 import apiConnexion from "@services/apiConnexion";
@@ -70,6 +72,15 @@ function Login() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login</title>
+        <meta
+          name="description"
+          content="Login page to access your personal account"
+        />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
+      </Helmet>
       <ToastContainer
         position="top-right"
         autoClose={4000}

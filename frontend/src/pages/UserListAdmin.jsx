@@ -35,7 +35,7 @@ function UserListAdmin() {
           name="description"
           content="View a list of all registered users on this page. Manage user information and access levels."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <Nav />
       <div className="h-[100vh]">
