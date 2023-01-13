@@ -88,9 +88,12 @@ function Booking() {
       </Helmet>
       <Nav />
       <div>
-        <div className="flex flex-col justify-center items-center space-x-8 mt-10 gap-5">
+        <h1 className="text-center font-bold text-3xl pt-8 pb-4">
+          Book your kart !
+        </h1>
+        <div className="flex flex-col justify-center items-center mt-10 gap-5">
           {vehicle && (
-            <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2 bg-[#deb887e6]">
+            <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden my-2 px-2 py-2 bg-[#deb887e6]">
               <div className="pt-1 flex justify-end">
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
                   {vehicle.type}
@@ -122,14 +125,14 @@ function Booking() {
             <ButtonTemplate
               buttonType="button"
               buttonText="Delete booking"
-              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white p-3"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
               methodOnClick={backToAllVehicles}
             />
 
             <ButtonTemplate
               buttonType="button"
               buttonText="Book this car"
-              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white p-3"
+              buttonStyle="bg-blue-900 hover:bg-blue-800 w-48 h-10 rounded-lg text-white"
               methodOnClick={handleValidation}
             />
           </div>
