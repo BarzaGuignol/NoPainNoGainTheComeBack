@@ -38,7 +38,7 @@ function Booking() {
       })
       .then((book) => {
         toast("Your booking has been validated");
-        setTimeout(() => navigate(`/summary-booking/${book.data}`), 4000);
+        setTimeout(() => navigate(`/summary-booking/${book.data}`), 2500);
       })
       .catch((err) => console.error(err));
   };
@@ -46,7 +46,7 @@ function Booking() {
   const backToAllVehicles = () => {
     setVehicle({});
     toast("Booking successfully deleted");
-    setTimeout(() => navigate("/search"), 4000);
+    setTimeout(() => navigate("/search"), 2500);
   };
   useEffect(() => {
     apiConnexion

@@ -67,7 +67,7 @@ function EditVehicle() {
       })
       .then(() => {
         notify("Vehicle successfully updated!");
-        setTimeout(() => navigate("/vehicles/management"), 4000);
+        setTimeout(() => navigate("/vehicles/management"), 2500);
       })
       .catch((error) => console.error(error));
   };

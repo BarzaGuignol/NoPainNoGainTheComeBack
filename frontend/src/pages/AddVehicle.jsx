@@ -45,7 +45,7 @@ function AddVehicle() {
       .then((vehicles) => {
         notify("Vehicle successfully added!");
         setVehicle(vehicles.data);
-        setTimeout(() => navigate("/"), 4000);
+        setTimeout(() => navigate("/vehicles/management"), 2500);
       })
       .catch((err) => console.error(err));
   };
@@ -85,7 +85,7 @@ function AddVehicle() {
       />
       <Nav />
       <div className="h-[150vh]">
-        <h1 className="text-center font-bold text-3xl pt-8">User Management</h1>
+        <h1 className="text-center font-bold text-3xl pt-8">Add a vehicle</h1>
         <form className="flex flex-col items-center">
           {/* FORM ADD OPTION */}
           <div className="mt-8 flex flex-col items-center w-full">
@@ -144,8 +144,8 @@ function AddVehicle() {
               inputType="number"
               name="vehicle_year"
             />
-            <label htmlFor="Availablity" className="mb-2">
-              Availablity
+            <label htmlFor="Availability" className="mb-2">
+              Availability
             </label>
             {vehicle.vehicle_status === 0 && (
               <ButtonTemplate
