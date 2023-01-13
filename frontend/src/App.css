@@ -36,5 +36,8 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* color:#312E82; */
+  color:#15285f;
 }
+h1{
+  color: #042cbb; 
+} 
