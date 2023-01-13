@@ -60,13 +60,9 @@ export default function Search() {
               onChange={(e) => setTypeChoice(e.target.value)}
             >
               <option value="">Type</option>
-              <option value="Break">Break</option>
-              <option value="Sedan">Sedan</option>
-              <option value="SUV">SUV</option>
-              <option value="Limousine">Limousine</option>
-              <option value="Truck">Truck</option>
-              <option value="Pick-up">Pick-up</option>
-              <option value="Van">Van</option>
+              <option value="50CC">50CC</option>
+              <option value="100CC">100CC</option>
+              <option value="150CC">150CC</option>
             </select>
           </form>
           <Link

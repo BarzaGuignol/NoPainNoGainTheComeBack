@@ -57,7 +57,7 @@ function Booking() {
   }, [id]);
 
   return (
-    <>
+    <div className="h-[80vh]">
       <ToastContainer
         position="top-right"
         autoClose={4000}
@@ -81,7 +81,7 @@ function Booking() {
       </Helmet>
       <Nav />
 
-      <div className="flex justify-center space-x-8 mt-10">
+      <div className="flex flex-col justify-center items-center space-x-8 mt-10 gap-5">
         {vehicle && (
           <div className="max-w-sm flex flex-col w-screen rounded-lg border-2 overflow-hidden ml-10 my-2 px-2 py-2">
             <div className="pt-1 flex justify-end">
@@ -109,22 +109,23 @@ function Booking() {
             </div>
           </div>
         )}
+        <div className="flex gap-5">
+          <ButtonTemplate
+            buttonType="button"
+            buttonText="Delete booking"
+            buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
+            methodOnClick={backToAllVehicles}
+          />
 
-        <ButtonTemplate
-          buttonType="button"
-          buttonText="Delete booking"
-          buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
-          methodOnClick={backToAllVehicles}
-        />
-
-        <ButtonTemplate
-          buttonType="button"
-          buttonText="Book this car"
-          buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
-          methodOnClick={handleValidation}
-        />
+          <ButtonTemplate
+            buttonType="button"
+            buttonText="Book this car"
+            buttonStyle="text-black text-lg rounded bg-transparent  border-2 border-current px-4 py-2"
+            methodOnClick={handleValidation}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
