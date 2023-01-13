@@ -34,7 +34,7 @@ function AllVehicles() {
           name="description"
           content="View and filter our entire rental fleet by reservation date on this page. Easily find available vehicles for your desired rental period."
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <div>
         <Nav />

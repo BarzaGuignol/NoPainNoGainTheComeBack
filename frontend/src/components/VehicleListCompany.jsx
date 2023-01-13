@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
+
 import apiConnexion from "../services/apiConnexion";
 import VehicleCardCompany from "./VehicleCardCompany";
 
@@ -60,6 +62,15 @@ function VehicleListCompany() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Admin - Management Vehicles</title>
+        <meta
+          name="description"
+          content="Management vehicle to the rental fleet on this page. Manage vehicle details and availability."
+        />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
+      </Helmet>
       <ToastContainer
         position="top-right"
         autoClose={4000}

@@ -17,7 +17,7 @@ export default function PanicRoom() {
           name="description"
           content="Here is a surprise page to add some fun to the hackathon. To combine competence and fun "
         />
-        <link rel="icon" type="image/png" href="../sec/assets/favicon.svg" />
+        <link rel="icon" type="image/png" href="../src/assets/iconeMario.png" />
       </Helmet>
       <Nav />
       <div className="bg-slate-500 h-[150vh]">
