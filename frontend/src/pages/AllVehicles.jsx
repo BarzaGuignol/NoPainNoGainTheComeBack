@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -9,7 +10,7 @@ import VehicleList from "../components/VehicleList";
 
 function AllVehicles() {
   const [vehicleList, setVehicleList] = useState();
-  const [searchParams, setSearchparams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const departure = searchParams.get("departure_date");
   const arrival = searchParams.get("arrival_date");
   const type = searchParams.get("type");
